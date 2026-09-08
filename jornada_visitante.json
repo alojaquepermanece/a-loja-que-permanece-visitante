@@ -1,0 +1,217 @@
+{
+  "versao": "1.0.0",
+  "perfil": "visitante",
+  "descricao": "Jornada deterministica e multicanal para visitantes de A Loja que Permanece.",
+  "regras": {
+    "permite_pergunta_livre": false,
+    "permite_rag": false,
+    "triagem_e_autodeclaracao": true,
+    "autodeclaracao_concede_acesso": false,
+    "conteudo_seguro_para_exposicao_publica": true,
+    "nao_expor_segredos_ritualisticos": true,
+    "nao_confirmar_agendamento": true,
+    "nao_processar_pagamento": true
+  },
+  "acoes_globais": [
+    {"id": "nav:inicio", "rotulo": "INÍCIO", "destino": "triagem:pergunta"},
+    {"id": "nav:voltar", "rotulo": "VOLTAR", "destino": "historico"},
+    {"id": "nav:encerrar", "rotulo": "ENCERRAR", "destino": "sessao:encerrar"}
+  ],
+  "entrada": {
+    "id": "entrada:visitante",
+    "mensagem_preenchida": "Quero conhecer A Loja que Permanece.",
+    "destino": "triagem:pergunta"
+  },
+  "nos": {
+    "triagem:pergunta": {
+      "tipo": "menu",
+      "texto": "Antes de começarmos, você é maçom?",
+      "opcoes": [
+        {"id": "triagem:macom:sim", "rotulo": "Sim", "destino": "menu:visitante:macom"},
+        {"id": "triagem:macom:nao", "rotulo": "Não", "destino": "menu:visitante:publico"},
+        {"id": "triagem:macom:nao_informar", "rotulo": "Prefiro não informar", "destino": "menu:visitante:publico"}
+      ]
+    },
+    "menu:visitante:publico": {
+      "tipo": "menu",
+      "texto": "Como posso ajudar?",
+      "opcoes": [
+        {"id": "obra:menu", "rotulo": "Conhecer a obra", "destino": "obra:menu"},
+        {"id": "autor:perfil", "rotulo": "Conhecer o autor", "destino": "autor:perfil"},
+        {"id": "obra:publico", "rotulo": "Para quem é o livro", "destino": "obra:publico"},
+        {"id": "obra:proposta", "rotulo": "Conhecer a proposta", "destino": "obra:proposta"},
+        {"id": "comercial:menu", "rotulo": "Adquirir o livro", "destino": "comercial:menu"}
+      ]
+    },
+    "menu:visitante:macom": {
+      "tipo": "menu",
+      "texto": "Como posso ajudar?",
+      "opcoes": [
+        {"id": "obra:menu", "rotulo": "Conhecer a obra", "destino": "obra:menu"},
+        {"id": "conteudo:menu", "rotulo": "Explorar conteúdos", "destino": "conteudo:menu"},
+        {"id": "ajuda:menu", "rotulo": "Como o livro ajuda a Loja", "destino": "ajuda:menu"},
+        {"id": "palestra:menu", "rotulo": "Conhecer a palestra", "destino": "palestra:menu"},
+        {"id": "autor:perfil", "rotulo": "Conhecer o autor", "destino": "autor:perfil"},
+        {"id": "comercial:menu", "rotulo": "Adquirir o livro", "destino": "comercial:menu"}
+      ]
+    },
+    "obra:menu": {
+      "tipo": "menu",
+      "texto": "O que você deseja conhecer sobre a obra?",
+      "opcoes": [
+        {"id": "obra:o_que_e", "rotulo": "O que é", "destino": "obra:o_que_e"},
+        {"id": "obra:motivacao", "rotulo": "Por que foi escrita", "destino": "obra:motivacao"},
+        {"id": "obra:publico", "rotulo": "A quem se destina", "destino": "obra:publico"},
+        {"id": "obra:organizacao", "rotulo": "Como está organizada", "destino": "obra:organizacao"},
+        {"id": "obra:como_usar", "rotulo": "Como utilizar", "destino": "obra:como_usar"}
+      ]
+    },
+    "obra:o_que_e": {
+      "tipo": "resposta",
+      "texto": "A Loja que Permanece — Governança e Gestão Maçônica para Gerações é uma obra voltada ao fortalecimento institucional da Loja. Suas diretrizes foram elaboradas buscando neutralidade ritualística, para que possam dialogar com diferentes realidades sem substituir as normas da Potência. A apresentação pública não revela sinais, palavras, fórmulas ou sequências ritualísticas."
+    },
+    "obra:motivacao": {
+      "tipo": "resposta",
+      "texto": "A obra foi escrita para contribuir com Lojas que desejam transformar experiências individuais em memória institucional, fortalecer a continuidade administrativa e preparar as gerações seguintes para preservar e aprimorar o trabalho recebido."
+    },
+    "obra:publico": {
+      "tipo": "resposta",
+      "texto": "O livro se destina a dirigentes, Oficiais, Mestres Instalados, futuros ocupantes de funções e membros que desejam conhecer o funcionamento institucional da Loja. Também pode apoiar Aprendizes e Companheiros na compreensão gradual das responsabilidades que sustentam a vida da Oficina."
+    },
+    "obra:organizacao": {
+      "tipo": "resposta",
+      "texto": "A obra está organizada em cinco partes e dezessete capítulos. Os cargos de Porta-Bandeira e Porta-Estandarte são tratados conjuntamente no capítulo 13. O Conselho de Mestres Instalados aparece em um Interlúdio e não integra a contagem dos dezessete capítulos dedicados aos cargos."
+    },
+    "obra:como_usar": {
+      "tipo": "resposta",
+      "texto": "A leitura pode ser integral ou orientada por responsabilidades e necessidades da Loja. Os capítulos combinam reflexão institucional e instrumentos auxiliares, permitindo consultar um tema, aprofundá-lo no livro e adaptar as práticas à realidade local, sempre em conformidade com as normas da Potência."
+    },
+    "obra:proposta": {
+      "tipo": "resposta",
+      "texto": "A proposta é ajudar a Loja a organizar responsabilidades, registrar aprendizados e construir continuidade entre administrações e gerações. O livro apresenta os temas de forma detalhada e reúne ferramentas auxiliares para apoiar a aplicação responsável de seus princípios."
+    },
+    "autor:perfil": {
+      "tipo": "resposta",
+      "texto": "Mauro Arantes é Analista de Gestão e formado em Tecnologia da Informação. Maçom desde 2016, é Mestre Instalado e ocupou por duas vezes a cadeira de Venerável Mestre, em Lojas diferentes. Sua experiência em gestão e na vida maçônica fundamenta a reflexão apresentada na obra."
+    },
+    "conteudo:menu": {
+      "tipo": "menu",
+      "texto": "Escolha uma parte da obra para receber uma breve amostra dos assuntos abordados:",
+      "opcoes": [
+        {"id": "conteudo:parte:direcao", "rotulo": "Direção e continuidade", "destino": "conteudo:parte:direcao"},
+        {"id": "conteudo:parte:administracao", "rotulo": "Administração e finanças", "destino": "conteudo:parte:administracao"},
+        {"id": "conteudo:parte:oratoria", "rotulo": "Oratória e orientação", "destino": "conteudo:cargo:orador"},
+        {"id": "conteudo:parte:ritual_cerimonial", "rotulo": "Operação ritual e cerimonial", "destino": "conteudo:parte:ritual_cerimonial"},
+        {"id": "conteudo:parte:apoio", "rotulo": "Apoio, formação e fraternidade", "destino": "conteudo:parte:apoio"}
+      ]
+    },
+    "conteudo:parte:direcao": {
+      "tipo": "menu",
+      "texto": "Escolha o tema:",
+      "opcoes": [
+        {"id": "conteudo:cargo:veneravel_mestre", "rotulo": "Venerável Mestre", "destino": "conteudo:cargo:veneravel_mestre"},
+        {"id": "conteudo:cargo:primeiro_vigilante", "rotulo": "Primeiro Vigilante", "destino": "conteudo:cargo:primeiro_vigilante"},
+        {"id": "conteudo:cargo:segundo_vigilante", "rotulo": "Segundo Vigilante", "destino": "conteudo:cargo:segundo_vigilante"},
+        {"id": "conteudo:interludio:conselho_mestres_instalados", "rotulo": "Conselho de Mestres Instalados", "destino": "conteudo:interludio:conselho_mestres_instalados"}
+      ]
+    },
+    "conteudo:parte:administracao": {
+      "tipo": "menu",
+      "texto": "Escolha o tema:",
+      "opcoes": [
+        {"id": "conteudo:cargo:secretario", "rotulo": "Secretário", "destino": "conteudo:cargo:secretario"},
+        {"id": "conteudo:cargo:tesoureiro", "rotulo": "Tesoureiro", "destino": "conteudo:cargo:tesoureiro"},
+        {"id": "conteudo:cargo:chanceler", "rotulo": "Chanceler", "destino": "conteudo:cargo:chanceler"}
+      ]
+    },
+    "conteudo:parte:ritual_cerimonial": {
+      "tipo": "menu",
+      "texto": "Escolha o tema:",
+      "opcoes": [
+        {"id": "conteudo:cargo:mestre_cerimonias", "rotulo": "Mestre de Cerimônias", "destino": "conteudo:cargo:mestre_cerimonias"},
+        {"id": "conteudo:cargo:experto", "rotulo": "Experto", "destino": "conteudo:cargo:experto"},
+        {"id": "conteudo:cargo:diaconos", "rotulo": "Diáconos", "destino": "conteudo:cargo:diaconos"},
+        {"id": "conteudo:cargo:guarda_interno", "rotulo": "Cobridor Interno (Guarda do Templo)", "destino": "conteudo:cargo:guarda_interno"},
+        {"id": "conteudo:cargo:mestre_harmonia", "rotulo": "Mestre de Harmonia", "destino": "conteudo:cargo:mestre_harmonia"},
+        {"id": "conteudo:cargo:porta_bandeira_estandarte", "rotulo": "Porta-Bandeira e Porta-Estandarte", "destino": "conteudo:cargo:porta_bandeira_estandarte"}
+      ]
+    },
+    "conteudo:parte:apoio": {
+      "tipo": "menu",
+      "texto": "Escolha o tema:",
+      "opcoes": [
+        {"id": "conteudo:cargo:arquiteto", "rotulo": "Arquiteto", "destino": "conteudo:cargo:arquiteto"},
+        {"id": "conteudo:cargo:bibliotecario", "rotulo": "Bibliotecário", "destino": "conteudo:cargo:bibliotecario"},
+        {"id": "conteudo:cargo:hospitaleiro", "rotulo": "Hospitaleiro", "destino": "conteudo:cargo:hospitaleiro"},
+        {"id": "conteudo:cargo:curador_agape", "rotulo": "Curador do Ágape Fraterno", "destino": "conteudo:cargo:curador_agape"}
+      ]
+    },
+    "ajuda:menu": {
+      "tipo": "menu",
+      "texto": "Em qual aspecto você deseja conhecer a contribuição do livro?",
+      "opcoes": [
+        {"id": "ajuda:continuidade", "rotulo": "Continuidade entre administrações", "destino": "ajuda:continuidade"},
+        {"id": "ajuda:clareza_papeis", "rotulo": "Clareza de papéis", "destino": "ajuda:clareza_papeis"},
+        {"id": "ajuda:documentos_memoria", "rotulo": "Documentos e memória", "destino": "ajuda:documentos_memoria"},
+        {"id": "ajuda:planejamento_monitoramento", "rotulo": "Planejamento e monitoramento", "destino": "ajuda:planejamento_monitoramento"},
+        {"id": "ajuda:formacao_sucessao", "rotulo": "Formação, engajamento e sucessão", "destino": "ajuda:formacao_sucessao"},
+        {"id": "ajuda:convivencia", "rotulo": "Convivência, acolhimento e fraternidade", "destino": "ajuda:convivencia"}
+      ]
+    },
+    "ajuda:continuidade": {"tipo": "resposta", "texto": "O livro propõe que cada administração receba, preserve e aperfeiçoe o trabalho acumulado, registrando decisões e aprendizados para que a Loja atravesse gestões e gerações sem depender apenas da memória individual."},
+    "ajuda:clareza_papeis": {"tipo": "resposta", "texto": "A definição mais clara de responsabilidades reduz lacunas, sobreposições e personalismos. A obra detalha os papéis e apresenta ferramentas auxiliares para apoiar o exercício coordenado das funções."},
+    "ajuda:documentos_memoria": {"tipo": "resposta", "texto": "Registros organizados transformam experiências dispersas em memória institucional. O livro mostra como documentos e instrumentos de acompanhamento podem facilitar consultas, transições e decisões futuras."},
+    "ajuda:planejamento_monitoramento": {"tipo": "resposta", "texto": "A obra relaciona objetivos, ações, responsáveis e acompanhamento. Indicadores são utilizados para avaliar o andamento e produzir aprendizado; não são apresentados como tarefas de execução."},
+    "ajuda:formacao_sucessao": {"tipo": "resposta", "texto": "A continuidade exige formação progressiva, participação e preparação de sucessores. O livro desenvolve esses temas e oferece instrumentos auxiliares para que o conhecimento circule entre gerações."},
+    "ajuda:convivencia": {"tipo": "resposta", "texto": "Governança também envolve cuidado com vínculos, acolhimento e fraternidade. A obra aborda práticas que fortalecem o pertencimento e ajudam a preservar um ambiente institucional saudável."},
+    "palestra:menu": {
+      "tipo": "menu",
+      "texto": "O que você deseja conhecer sobre a palestra A Construção do Legado Maçônico?",
+      "opcoes": [
+        {"id": "palestra:sobre", "rotulo": "Sobre a palestra", "destino": "palestra:sobre"},
+        {"id": "palestra:temas", "rotulo": "Temas abordados", "destino": "palestra:temas"},
+        {"id": "palestra:publico", "rotulo": "Para quem se destina", "destino": "palestra:publico"},
+        {"id": "palestra:relacao_livro", "rotulo": "Relação com o livro", "destino": "palestra:relacao_livro"},
+        {"id": "palestra:agendamento", "rotulo": "Levar à minha Loja", "destino": "palestra:agendamento"}
+      ]
+    },
+    "palestra:sobre": {"tipo": "resposta_externa", "fonte": "base_palestra.json", "campo": "palestra.sobre"},
+    "palestra:temas": {"tipo": "resposta_externa", "fonte": "base_palestra.json", "campos": ["palestra.temas_publicos.descricao", "palestra.temas_publicos.observacao"]},
+    "palestra:publico": {"tipo": "resposta_externa", "fonte": "base_palestra.json", "campo": "palestra.publico"},
+    "palestra:relacao_livro": {"tipo": "resposta_externa", "fonte": "base_palestra.json", "campo": "palestra.relacao_com_livro"},
+    "palestra:agendamento": {
+      "tipo": "coleta_orientada",
+      "fonte": "base_palestra.json",
+      "campo": "palestra.manifestacao_de_interesse"
+    },
+    "comercial:menu": {
+      "tipo": "menu",
+      "texto": "O que você deseja saber sobre a aquisição do livro?",
+      "fonte": "dados_comerciais.json",
+      "opcoes": [
+        {"id": "comercial:comprar", "rotulo": "Comprar pelo site", "destino": "comercial:comprar"},
+        {"id": "comercial:preco", "rotulo": "Preço", "destino": "comercial:preco"},
+        {"id": "comercial:frete", "rotulo": "Frete", "destino": "comercial:frete"},
+        {"id": "comercial:retirada", "rotulo": "Retirada", "destino": "comercial:retirada"},
+        {"id": "comercial:desconto_quantidade", "rotulo": "Descontos por quantidade", "destino": "comercial:desconto_quantidade"},
+        {"id": "comercial:contatos", "rotulo": "Contatos", "destino": "comercial:contatos"}
+      ]
+    },
+    "sessao:encerrar": {
+      "tipo": "encerramento",
+      "texto": "Atendimento encerrado. Quando desejar retornar, iniciaremos uma nova jornada.",
+      "limpar": ["navegacao", "autodeclaracao"],
+      "preservar": ["conta", "perfil_de_acesso"]
+    }
+  },
+  "respostas_tematicas_externas": {
+    "prefixos": ["conteudo:cargo:", "conteudo:interludio:"],
+    "fonte": "base_conteudo_visitante.json",
+    "regra": "Usar somente amostras publicas homologadas, sem procedimentos ritualisticos e com convite ao aprofundamento no livro."
+  },
+  "comportamento_texto_livre": {
+    "resposta": "Nesta modalidade, o atendimento funciona por opções guiadas. Escolha um dos botões disponíveis para continuar.",
+    "permitir_atalho_contextual": true,
+    "atalhos_permitidos": ["comercial:menu", "comercial:contatos", "palestra:agendamento"]
+  }
+}

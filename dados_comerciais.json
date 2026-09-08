@@ -1,0 +1,44 @@
+{
+  "produto": {
+    "nome": "A Loja que Permanece — Governança e Gestão Maçônica para Gerações",
+    "autor": "Mauro Arantes"
+  },
+  "preco": {
+    "valor": 67.00,
+    "moeda": "BRL",
+    "observacao": ""
+  },
+  "disponibilidade": "Disponível para pronta entrega",
+  "formas_de_pagamento": [
+    "Pix",
+    "Cartão de crédito",
+    "Boleto"
+  ],
+  "frete": {
+    "economico": {
+      "1_exemplar": 20.00,
+      "2_exemplares": 28.00
+    },
+    "demais_situacoes": "Frete calculado conforme CEP"
+  },
+  "retirada": "Não disponível",
+  "descontos_por_quantidade": "Não existem condições especiais",
+  "canais_de_aquisicao": {
+    "site": "www.alojaquepermanece.com.br",
+    "venda_presencial": "Venda presencial após palestras"
+  },
+  "canais_de_contato": {
+    "email": "alojaquepermanece@gmail.com",
+    "instagram": "@alojaquepermanece",
+    "whatsapp": "11 94531-0651"
+  },
+  "regras_de_resposta": [
+    "Não inventar preço.",
+    "Não inventar disponibilidade.",
+    "Não inventar formas de pagamento.",
+    "Não inventar condições de frete ou retirada.",
+    "Não inventar descontos por quantidade.",
+    "Quando uma informação comercial não estiver cadastrada, informar que ela não está disponível na base comercial atual.",
+    "Quando necessário, orientar o interessado a utilizar um dos canais de aquisição cadastrados."
+  ]
+}

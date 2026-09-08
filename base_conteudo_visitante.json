@@ -1,0 +1,297 @@
+{
+  "versao": "1.0.0",
+  "finalidade": "Degustações públicas e determinísticas dos conteúdos de A Loja que Permanece.",
+  "regras_de_exposicao": [
+    "Não reproduzir extensamente o texto da obra.",
+    "Não revelar sinais, palavras, fórmulas ou sequências ritualísticas.",
+    "Não transformar a autodeclaração de pertencimento maçônico em autorização de acesso.",
+    "Não substituir regulamentos, rituais ou determinações da Potência.",
+    "Apresentar indícios dos assuntos e informar que o livro oferece desenvolvimento e ferramentas auxiliares.",
+    "Não entregar protocolos personalizados ao Visitante."
+  ],
+  "modelo": {
+    "campos": [
+      "titulo",
+      "referencia",
+      "missao",
+      "temas",
+      "instrumentos",
+      "risco",
+      "microacao",
+      "aprofundamento"
+    ],
+    "observacao": "Microações são convites gerais à reflexão e à organização; não constituem diagnóstico nem plano personalizado."
+  },
+  "conteudos": {
+    "conteudo:cargo:veneravel_mestre": {
+      "titulo": "Venerável Mestre",
+      "referencia": "Capítulo 1",
+      "missao": "Exercer a direção integrada da Loja, articulando liderança, administração, formação e representação institucional.",
+      "temas": [
+        "Governança",
+        "Coordenação dos Oficiais",
+        "Continuidade administrativa",
+        "Memória institucional"
+      ],
+      "instrumentos": "Entre os instrumentos descritos está o Registro Pessoal de Governança, apresentado como o Diário do Venerável Mestre. Trata-se de um instrumento conceitualmente descrito, e não de um formulário pronto.",
+      "risco": "Concentrar a gestão na memória e na atuação pessoal de quem ocupa o cargo, dificultando a continuidade.",
+      "microacao": "Identificar qual informação essencial da administração atual precisará chegar organizada ao sucessor.",
+      "aprofundamento": "O capítulo detalha funções, rotinas, registros, protocolos, riscos, indicadores e práticas de transição."
+    },
+    "conteudo:cargo:primeiro_vigilante": {
+      "titulo": "Primeiro Vigilante",
+      "referencia": "Capítulo 2",
+      "missao": "Coordenar a formação dos Companheiros e manter prontidão para contribuir com a continuidade executiva da Loja.",
+      "temas": [
+        "Formação de Companheiros",
+        "Acompanhamento da progressão",
+        "Coordenação",
+        "Preparação sucessória"
+      ],
+      "instrumentos": "O livro descreve registros formativos e instrumentos de acompanhamento da progressão.",
+      "risco": "Reduzir a formação a uma rotina sem acompanhamento real da compreensão e do desenvolvimento.",
+      "microacao": "Verificar se o acompanhamento formativo registra avanços, dúvidas e necessidades, além da simples presença.",
+      "aprofundamento": "O capítulo desenvolve práticas de formação, acompanhamento e continuidade do conhecimento."
+    },
+    "conteudo:cargo:segundo_vigilante": {
+      "titulo": "Segundo Vigilante",
+      "referencia": "Capítulo 3",
+      "missao": "Acompanhar a formação e a integração dos Aprendizes, favorecendo pertencimento e prevenindo afastamentos silenciosos.",
+      "temas": [
+        "Formação de Aprendizes",
+        "Acolhimento",
+        "Integração",
+        "Prevenção da evasão"
+      ],
+      "instrumentos": "São descritos registros formativos e formas estruturadas de acompanhamento e atenção preventiva.",
+      "risco": "Perceber o desengajamento apenas quando o vínculo com a Loja já estiver enfraquecido.",
+      "microacao": "Observar se cada Aprendiz possui referências claras para formação, escuta e integração.",
+      "aprofundamento": "O capítulo reúne rotinas, registros, protocolos e indicadores ligados à formação e ao pertencimento."
+    },
+    "conteudo:interludio:conselho_mestres_instalados": {
+      "titulo": "Conselho de Mestres Instalados",
+      "referencia": "Interlúdio",
+      "missao": "Contribuir consultivamente com experiência e memória, respeitando a autoridade da administração em exercício.",
+      "temas": [
+        "Aconselhamento",
+        "Memória institucional",
+        "Continuidade",
+        "Limites de atuação"
+      ],
+      "instrumentos": "O Interlúdio oferece reflexão orientadora, sem apresentar um conjunto estruturado de ferramentas próprias.",
+      "risco": "Confundir aconselhamento com interferência ou governo paralelo.",
+      "microacao": "Distinguir, em uma frase, o que pertence ao aconselhamento e o que pertence à decisão da gestão atual.",
+      "aprofundamento": "O Interlúdio discute como a experiência acumulada pode servir à Loja sem substituir seus dirigentes."
+    },
+    "conteudo:cargo:secretario": {
+      "titulo": "Secretário",
+      "referencia": "Capítulo 4",
+      "missao": "Preservar a memória administrativa e organizar os registros e fluxos formais de informação da Loja.",
+      "temas": [
+        "Atas",
+        "Documentação",
+        "Arquivo",
+        "Comunicação institucional"
+      ],
+      "instrumentos": "O capítulo descreve registros, rotinas documentais e mecanismos de organização da memória institucional.",
+      "risco": "Permitir que decisões, responsabilidades e aprendizados se percam em documentos incompletos ou dispersos.",
+      "microacao": "Escolher um registro essencial e verificar se ele pode ser localizado e compreendido por outra administração.",
+      "aprofundamento": "O livro detalha práticas de documentação, preservação, comunicação e transição da Secretaria."
+    },
+    "conteudo:cargo:tesoureiro": {
+      "titulo": "Tesoureiro",
+      "referencia": "Capítulo 5",
+      "missao": "Cuidar da integridade, da transparência e da sustentabilidade dos recursos da Loja.",
+      "temas": [
+        "Receitas e despesas",
+        "Rastreabilidade",
+        "Prestação de contas",
+        "Continuidade financeira"
+      ],
+      "instrumentos": "São descritos controles, registros e relatórios auxiliares à gestão e à prestação de contas.",
+      "risco": "Concentrar informações financeiras ou apresentar dados sem rastreabilidade e compreensão institucional.",
+      "microacao": "Verificar se uma pessoa autorizada consegue compreender a situação financeira a partir dos registros existentes.",
+      "aprofundamento": "O capítulo desenvolve rotinas, controles, protocolos e indicadores de saúde financeira."
+    },
+    "conteudo:cargo:chanceler": {
+      "titulo": "Chanceler",
+      "referencia": "Capítulo 6",
+      "missao": "Acompanhar presença, regularidade documental e sinais de participação e pertencimento dos membros.",
+      "temas": [
+        "Frequência",
+        "Quórum",
+        "Regularidade",
+        "Engajamento"
+      ],
+      "instrumentos": "O livro descreve registros e formas de acompanhamento que transformam dados de presença em informação institucional responsável.",
+      "risco": "Tratar ausências apenas como números e deixar de perceber padrões de afastamento.",
+      "microacao": "Observar se os registros permitem reconhecer mudanças relevantes de frequência sem expor indevidamente os membros.",
+      "aprofundamento": "O capítulo detalha controles, rotinas e protocolos de acompanhamento e articulação fraterna."
+    },
+    "conteudo:cargo:orador": {
+      "titulo": "Orador",
+      "referencia": "Capítulo 7",
+      "missao": "Zelar pela conformidade normativa e oferecer orientação segura diante de decisões e dúvidas institucionais.",
+      "temas": [
+        "Legalidade",
+        "Interpretação normativa",
+        "Pareceres",
+        "Regularidade institucional"
+      ],
+      "instrumentos": "O capítulo descreve registros, rotinas de consulta e estruturas auxiliares para fundamentação normativa.",
+      "risco": "Basear decisões em memória, costume informal ou interpretação sem conferência das normas aplicáveis.",
+      "microacao": "Identificar onde a Loja consulta e registra os fundamentos normativos de uma decisão relevante.",
+      "aprofundamento": "O livro desenvolve boas práticas de conformidade, consulta, registro e preservação da segurança institucional."
+    },
+    "conteudo:cargo:mestre_cerimonias": {
+      "titulo": "Mestre de Cerimônias",
+      "referencia": "Capítulo 8",
+      "missao": "Favorecer coordenação, fluidez e dignidade dos trabalhos, em conformidade com o ritual adotado.",
+      "temas": [
+        "Coordenação cerimonial",
+        "Preparação",
+        "Integração entre Oficiais",
+        "Continuidade operacional"
+      ],
+      "instrumentos": "O capítulo descreve registros, rotinas de preparação e instrumentos de continuidade sem substituir o ritual da Potência.",
+      "risco": "Depender apenas da improvisação ou do conhecimento não registrado de uma única pessoa.",
+      "microacao": "Verificar se responsabilidades de preparação estão claras antes dos trabalhos.",
+      "aprofundamento": "O livro detalha práticas de coordenação e preparação, preservando a precedência das normas ritualísticas."
+    },
+    "conteudo:cargo:experto": {
+      "titulo": "Experto",
+      "referencia": "Capítulo 9",
+      "missao": "Cuidar da preparação, do amparo e da segurança das pessoas sob sua responsabilidade nos ritos de passagem.",
+      "temas": [
+        "Acolhimento",
+        "Segurança",
+        "Preparação",
+        "Continuidade da experiência institucional"
+      ],
+      "instrumentos": "O capítulo apresenta rotinas, registros e protocolos auxiliares de preparação e segurança, sem expô-los na degustação pública.",
+      "risco": "Permitir improvisos que comprometam segurança, dignidade ou acolhimento.",
+      "microacao": "Verificar se a preparação, as responsabilidades e as condições de segurança são examinadas com antecedência.",
+      "aprofundamento": "O desenvolvimento completo está no livro e deve sempre ser aplicado em conformidade com o ritual e as normas da Potência."
+    },
+    "conteudo:cargo:diaconos": {
+      "titulo": "Diáconos",
+      "referencia": "Capítulo 10",
+      "missao": "Contribuir para a comunicação ordenada e a coordenação entre as Luzes da Loja.",
+      "temas": [
+        "Comunicação",
+        "Coordenação",
+        "Apoio aos trabalhos",
+        "Preparo conjunto"
+      ],
+      "instrumentos": "O capítulo descreve rotinas e mecanismos de alinhamento entre os Oficiais, sem revelar procedimentos ritualísticos.",
+      "risco": "Ruídos de comunicação e falta de alinhamento interromperem ou fragilizarem os trabalhos.",
+      "microacao": "Verificar se os Oficiais envolvidos conhecem antecipadamente suas responsabilidades de coordenação.",
+      "aprofundamento": "O livro desenvolve práticas de preparação, interação e continuidade operacional subordinadas ao ritual adotado."
+    },
+    "conteudo:cargo:guarda_interno": {
+      "titulo": "Cobridor Interno (Guarda do Templo)",
+      "referencia": "Capítulo 11",
+      "missao": "Zelar pelo controle de acesso, pela regularidade e pela proteção do ambiente dos trabalhos.",
+      "temas": [
+        "Segurança de acesso",
+        "Regularidade",
+        "Sigilo",
+        "Coordenação"
+      ],
+      "instrumentos": "O capítulo descreve verificações, registros e protocolos auxiliares de segurança, sem expor modos ritualísticos de reconhecimento.",
+      "risco": "Permitir que a informalidade ou a gentileza sem critérios comprometam a segurança institucional.",
+      "microacao": "Confirmar se responsabilidades e exceções de acesso são conhecidas e tratadas segundo as normas aplicáveis.",
+      "aprofundamento": "O livro detalha prevenção, coordenação e continuidade do cargo, preservando integralmente o sigilo ritualístico."
+    },
+    "conteudo:cargo:mestre_harmonia": {
+      "titulo": "Mestre de Harmonia",
+      "referencia": "Capítulo 12",
+      "missao": "Cuidar da ambiência sonora e de sua integração responsável ao caráter de cada trabalho.",
+      "temas": [
+        "Curadoria musical",
+        "Ambiência",
+        "Planejamento",
+        "Memória sonora"
+      ],
+      "instrumentos": "O capítulo descreve formas de planejamento, organização de repertório e preservação da memória da função.",
+      "risco": "Permitir que escolhas improvisadas ou inadequadas quebrem a unidade e a atmosfera pretendida.",
+      "microacao": "Observar se as escolhas sonoras são planejadas de acordo com a natureza da atividade.",
+      "aprofundamento": "O livro desenvolve critérios, rotinas, registros e indicadores para uma curadoria coerente e transmissível."
+    },
+    "conteudo:cargo:porta_bandeira_estandarte": {
+      "titulo": "Porta-Bandeira e Porta-Estandarte",
+      "referencia": "Capítulo 13",
+      "missao": "Exercer a custódia simbólica e a representação digna dos elementos sob sua responsabilidade.",
+      "temas": [
+        "Identidade",
+        "Civismo",
+        "Preservação material",
+        "Dignidade protocolar"
+      ],
+      "instrumentos": "O capítulo descreve cuidados, registros e rotinas de preservação e preparação, sem reproduzir sequências cerimoniais.",
+      "risco": "Permitir que a falta de alinhamento ou de conservação comprometa a dignidade e a integridade dos símbolos.",
+      "microacao": "Verificar se custódia, conservação e responsabilidades estão claramente definidas.",
+      "aprofundamento": "Os dois cargos são tratados conjuntamente no capítulo 13, com práticas auxiliares subordinadas às normas da Potência."
+    },
+    "conteudo:cargo:arquiteto": {
+      "titulo": "Arquiteto",
+      "referencia": "Capítulo 14",
+      "missao": "Cuidar da infraestrutura, da funcionalidade do espaço e da preservação dos recursos materiais da Loja.",
+      "temas": [
+        "Infraestrutura",
+        "Logística",
+        "Patrimônio",
+        "Manutenção preventiva"
+      ],
+      "instrumentos": "O capítulo descreve inventários, verificações, registros e instrumentos de planejamento patrimonial.",
+      "risco": "Permitir que a aparente normalidade oculte fragilidades de manutenção, segurança ou disponibilidade de materiais.",
+      "microacao": "Escolher um recurso essencial e verificar se seu estado, responsável e necessidade de manutenção estão registrados.",
+      "aprofundamento": "O livro apresenta rotinas e ferramentas para continuidade material e prevenção de falhas."
+    },
+    "conteudo:cargo:bibliotecario": {
+      "titulo": "Bibliotecário",
+      "referencia": "Capítulo 15",
+      "missao": "Preservar e fazer circular o patrimônio intelectual e a produção de conhecimento da Loja.",
+      "temas": [
+        "Acervo",
+        "Produção intelectual",
+        "Catalogação",
+        "Memória cultural"
+      ],
+      "instrumentos": "O capítulo descreve formas de inventário, catalogação, indexação e acompanhamento da produção intelectual.",
+      "risco": "Permitir que conhecimentos e trabalhos permaneçam dispersos, inacessíveis ou repetidamente esquecidos.",
+      "microacao": "Verificar se um trabalho produzido recentemente pode ser localizado por tema e autoria.",
+      "aprofundamento": "O livro desenvolve práticas para transformar o acervo em fonte ativa de formação e continuidade."
+    },
+    "conteudo:cargo:hospitaleiro": {
+      "titulo": "Hospitaleiro",
+      "referencia": "Capítulo 16",
+      "missao": "Organizar o cuidado fraterno e o amparo responsável a membros e famílias em situações de vulnerabilidade.",
+      "temas": [
+        "Acolhimento",
+        "Beneficência",
+        "Sigilo",
+        "Rede de cuidado"
+      ],
+      "instrumentos": "O capítulo descreve registros protegidos, rotinas de acompanhamento e protocolos de cuidado e prestação de contas.",
+      "risco": "Permitir que a ajuda dependa de iniciativas isoladas, chegue tarde ou exponha indevidamente quem necessita de amparo.",
+      "microacao": "Avaliar se a Loja possui um caminho conhecido, discreto e responsável para reconhecer necessidades de cuidado.",
+      "aprofundamento": "O livro detalha práticas de acolhimento, coordenação, proteção da dignidade e continuidade da solidariedade."
+    },
+    "conteudo:cargo:curador_agape": {
+      "titulo": "Curador do Ágape Fraterno",
+      "referencia": "Capítulo 17",
+      "missao": "Cuidar do ágape como espaço de hospitalidade, integração e fraternidade vivida.",
+      "temas": [
+        "Logística sustentável",
+        "Acolhimento",
+        "Convivência",
+        "Integração"
+      ],
+      "instrumentos": "O capítulo descreve planejamento, organização de recursos e formas de acompanhar a qualidade da convivência.",
+      "risco": "Permitir que o encontro fraterno se torne apenas uma rotina logística ou reproduza isolamento e grupos fechados.",
+      "microacao": "Observar se visitantes e novos membros encontram acolhimento e oportunidade real de convivência.",
+      "aprofundamento": "O livro apresenta ferramentas auxiliares para unir sustentabilidade, hospitalidade e continuidade do ágape."
+    }
+  }
+}

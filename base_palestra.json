@@ -1,0 +1,68 @@
+{
+  "versao": "1.0.0",
+  "palestra": {
+    "titulo": "A Construção do Legado Maçônico",
+    "natureza": "Palestra reflexiva sobre governança, continuidade e legado institucional na Loja Maçônica.",
+    "pergunta_central": "Quando uma gestão termina, o que realmente permanece?",
+    "sobre": "A palestra parte de uma pergunta central: quando uma gestão termina, o que realmente permanece? A reflexão mostra como uma boa governança favorece a paz institucional e a continuidade do trabalho para além de uma administração.",
+    "temas_publicos": {
+      "descricao": "A palestra aborda, de modo reflexivo, memória, transmissão de responsabilidades, preparação de sucessores, regularidade, cuidado institucional e continuidade entre gerações.",
+      "observacao": "O desenvolvimento completo, as metáforas, as ferramentas apresentadas e as provocações são reservados ao encontro."
+    },
+    "publico": {
+      "descricao": "A palestra se destina às Lojas e aos seus Obreiros.",
+      "segmentos": [
+        "Dirigentes",
+        "Oficiais",
+        "Mestres Instalados",
+        "Futuros ocupantes de responsabilidades",
+        "Aprendizes",
+        "Companheiros"
+      ],
+      "mensagem": "A construção do legado é uma responsabilidade compartilhada."
+    },
+    "relacao_com_livro": "A palestra apresenta uma experiência sintética e reflexiva. O livro aprofunda sistematicamente o tema em dezessete capítulos e oferece ferramentas auxiliares para apoiar sua aplicação na realidade da Loja.",
+    "condicoes": {
+      "gratuita": true,
+      "possui_cache": false,
+      "texto_publico": "A palestra é gratuita e não possui cachê.",
+      "ajuda_de_custo": {
+        "pode_ser_combinada": true,
+        "finalidade": "Cobrir despesas de deslocamento.",
+        "condicao": "Dependendo da distância e do esforço logístico envolvido.",
+        "regra": "Qualquer ajuda de custo deve ser combinada previamente. O chatbot não calcula, presume ou confirma cobrança."
+      }
+    },
+    "manifestacao_de_interesse": {
+      "id": "palestra:agendamento",
+      "campos": [
+        {"id": "nome_da_loja", "rotulo": "Nome da Loja", "obrigatorio": true},
+        {"id": "oriente", "rotulo": "Oriente", "obrigatorio": true},
+        {"id": "potencia", "rotulo": "Potência", "obrigatorio": true},
+        {"id": "cidade", "rotulo": "Cidade", "obrigatorio": true},
+        {"id": "estado", "rotulo": "Estado", "obrigatorio": true},
+        {"id": "periodos_possiveis", "rotulo": "Períodos possíveis", "obrigatorio": false},
+        {"id": "contato_do_convidante", "rotulo": "Contato do convidante", "obrigatorio": true}
+      ],
+      "botao": {
+        "id": "palestra:contato",
+        "rotulo": "Falar sobre a palestra",
+        "mensagem_preenchida": "Gostaria de receber informações para levar a palestra A Construção do Legado Maçônico à minha Loja."
+      },
+      "aviso": "O envio das informações demonstra interesse e não confirma uma data."
+    }
+  },
+  "regras_de_resposta": [
+    "Utilizar apenas a descrição pública homologada.",
+    "Não revelar antecipadamente metáforas, ferramentas, exercícios, exemplos ou provocações reservados à apresentação.",
+    "Não reproduzir notas do apresentador nem o roteiro completo da palestra.",
+    "Não apresentar interesse informal como convite confirmado ou palestra agendada.",
+    "Não calcular nem presumir ajuda de custo.",
+    "Não divulgar procedimentos ritualísticos, sinais, palavras, fórmulas ou sequências ritualísticas."
+  ],
+  "fonte_interna": {
+    "arquivo": "Palestra A Construção do Legado Maçônico.pptx",
+    "uso": "Conferência interna de fidelidade; o arquivo não deve ser exposto pelo chatbot.",
+    "quantidade_de_slides_conferida": 17
+  }
+}
