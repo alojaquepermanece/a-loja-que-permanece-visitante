@@ -1,0 +1,183 @@
+{
+  "versao": "1.0.0",
+  "finalidade": "Painéis determinísticos e contextuais para leitores de A Loja que Permanece.",
+  "regras": [
+    "Exibir somente o ramo correspondente às respostas.",
+    "Não reproduzir integralmente os protocolos do livro.",
+    "Não coletar dados pessoais, institucionais, financeiros ou relatos identificáveis.",
+    "Não substituir normas, rituais ou deliberações regulares.",
+    "Indicadores orientam o diagnóstico e não constituem tarefas.",
+    "O Venerável Mestre coordena os Oficiais sem absorver suas atribuições."
+  ],
+  "paineis": {
+    "veneravel_mestre": {
+      "titulo": "Painel do Venerável Mestre",
+      "referencia": "Capítulo 1",
+      "missao": "O Venerável Mestre exerce a direção executiva unificada da Loja, integrando condução ritual, supervisão administrativa, liderança pedagógica, representação institucional e preservação da harmonia.",
+      "entrada": [
+        {"id": "preparacao", "grupo": "momento", "rotulo": "Estou me preparando para assumir."},
+        {"id": "inicio", "grupo": "momento", "rotulo": "Estou no início do mandato."},
+        {"id": "exercicio", "grupo": "momento", "rotulo": "Estou conduzindo regularmente a gestão."},
+        {"id": "continuidade", "grupo": "momento", "rotulo": "Estou preparando a continuidade ou a transição."},
+        {"id": "dificuldade", "grupo": "necessidade", "rotulo": "Estou enfrentando uma dificuldade específica."}
+      ],
+      "jornadas": {
+        "preparacao": {
+          "perguntas": {
+            "transicao": {
+              "texto": "Como está ocorrendo a transição com a gestão atual?",
+              "opcoes": {"estruturada": "Há diálogo estruturado e acesso às informações necessárias.", "parcial": "Há diálogo, mas as informações ainda estão incompletas.", "inexistente": "Ainda não existe uma transição organizada."}
+            },
+            "visao": {
+              "texto": "Qual é sua visão atual sobre a situação da Loja?",
+              "opcoes": {"confiavel": "Conheço a situação administrativa, financeira, formativa e fraterna.", "parcial": "Conheço apenas parte da situação.", "insuficiente": "Ainda não possuo uma visão confiável."}
+            },
+            "lacunas": {
+              "quando": {"visao": "parcial"},
+              "texto": "As lacunas restantes podem afetar obrigações, finanças, regularidade institucional ou continuidade de projetos?",
+              "opcoes": {"criticas": "Sim ou não sei avaliar.", "secundarias": "Não; são informações secundárias."}
+            },
+            "registro": {
+              "quando": {"visao": "confiavel"},
+              "texto": "Existe um registro claro das realizações, pendências, processos críticos e próximos prazos da gestão atual?",
+              "opcoes": {"sim": "Sim.", "nao": "Parcialmente ou não."}
+            }
+          },
+          "roteamento": [
+            {"quando": {"visao": "insuficiente"}, "resultado": "1A"},
+            {"quando": {"visao": "parcial", "lacunas": "criticas"}, "resultado": "1B1"},
+            {"quando": {"visao": "parcial", "lacunas": "secundarias"}, "resultado": "1B2"},
+            {"quando": {"visao": "confiavel", "registro": "nao"}, "resultado": "1C1"},
+            {"quando": {"visao": "confiavel", "registro": "sim"}, "resultado": "1C2"}
+          ],
+          "resultados": {
+            "1A": {"titulo": "Construir uma visão confiável da Loja", "leitura": "Antes de definir projetos ou distribuir responsabilidades, é necessário conhecer o estado em que a Oficina será recebida.", "prioridade": "Levantar obrigações, registros, situação financeira, composição funcional, calendário, progressões e projetos em andamento.", "instrumentos": ["Calendário Executivo", "Protocolo de Sucessão Executiva"], "roteiro_derivado": "Levantamento Inicial da Oficina", "risco": "Assumir com base em suposições.", "continuidade": ["Identificar as áreas desconhecidas.", "Definir onde cada informação será verificada.", "Registrar estado geral, pendências e responsáveis."], "aprofundamento": "Capítulo 1, itens 1.3, 1.6, 1.7, 1.12 e 1.13."},
+            "1B1": {"titulo": "Completar informações críticas", "leitura": "Ainda faltam informações capazes de alterar decisões de equipe, calendário ou prioridades.", "prioridade": "Fechar primeiro as lacunas de maior impacto institucional.", "instrumentos": ["Balanço Executivo", "Calendário Executivo", "Alinhamento com Oficiais-chave"], "risco": "Tratar conhecimento parcial como diagnóstico suficiente.", "continuidade": ["Relacionar até cinco lacunas críticas.", "Confirmar a fonte de cada informação.", "Somente depois consolidar prioridades e equipe."], "aprofundamento": "Capítulo 1, itens 1.3, 1.8, 1.11 e 1.13."},
+            "1B2": {"titulo": "Iniciar a composição funcional da equipe", "leitura": "A base institucional permite avançar, desde que as nomeações respondam às necessidades da Loja.", "prioridade": "Relacionar funções, capacidades e disponibilidade antes de considerar nomes.", "instrumentos": ["Gestão Estratégica de Nomeações"], "roteiro_derivado": "Matriz Função–Prontidão", "risco": "Nomear por afinidade, prestígio ou costume.", "continuidade": ["Mapear funções.", "Conversar individualmente com possíveis Oficiais.", "Confirmar a compreensão das responsabilidades."], "aprofundamento": "Capítulo 1, itens 1.3 e 1.9."},
+            "1C1": {"titulo": "Formalizar a passagem", "leitura": "O conhecimento existente precisa ser convertido em passagem verificável.", "prioridade": "Registrar realizações, pendências, processos críticos e prazos.", "instrumentos": ["Balanço Executivo", "Protocolo de Sucessão Executiva", "Calendário Executivo"], "risco": "Depender apenas de conversas.", "continuidade": ["Consolidar a síntese.", "Revisá-la com os Oficiais.", "Confirmar os registros oficiais."], "aprofundamento": "Capítulo 1, itens 1.6, 1.12, 1.13 e 1.15."},
+            "1C2": {"titulo": "Preparar prioridades e equipe", "leitura": "O diagnóstico recebido já permite orientar as primeiras decisões.", "prioridade": "Converter o diagnóstico em poucas prioridades e numa equipe funcional.", "instrumentos": ["Gestão Estratégica de Nomeações", "Calendário Executivo", "Rotina de Alinhamento Executivo"], "risco": "Confundir transição organizada com garantia de execução.", "continuidade": ["Validar prioridades.", "Conversar com futuros Oficiais.", "Preparar a primeira reunião da administração."], "aprofundamento": "Capítulo 1, itens 1.3, 1.8 e 1.11."}
+          },
+          "acoes_por_transicao": {
+            "1A": {"estruturada": "Use a reunião existente para listar as áreas desconhecidas.", "parcial": "Proponha uma pauta para completar o levantamento.", "inexistente": "Solicite reunião formal e verifique as áreas essenciais com os Oficiais responsáveis."},
+            "1B1": {"estruturada": "Use a reunião existente para verificar as lacunas críticas.", "parcial": "Envie pauta com até cinco informações críticas.", "inexistente": "Procure cada informação com o Oficial responsável."},
+            "1B2": {"estruturada": "Valide quais funções exigirão maior prontidão.", "parcial": "Conclua as informações sobre funções críticas.", "inexistente": "Consulte a situação das funções antes de considerar nomes."},
+            "1C1": {"estruturada": "Converta a transição numa síntese verificável.", "parcial": "Consolide o que foi transmitido e destaque o que falta.", "inexistente": "Proponha reunião para registrar realizações, pendências e prazos."},
+            "1C2": {"estruturada": "Use o diagnóstico para relacionar necessidades e funções.", "parcial": "Confirme informações parciais antes de fechar prioridades.", "inexistente": "Valide o diagnóstico com os Oficiais antes de formar a equipe."}
+          }
+        },
+        "inicio": {
+          "perguntas": {
+            "alinhamento": {"texto": "As prioridades iniciais foram discutidas com os Oficiais responsáveis?", "opcoes": {"nao": "Ainda não.", "parcial": "Foram discutidas parcialmente.", "sim": "Sim, houve alinhamento suficiente."}},
+            "registro": {"texto": "As prioridades estão registradas com responsáveis e forma de acompanhamento?", "opcoes": {"nao": "Não.", "parcial": "Apenas em parte.", "sim": "Sim."}},
+            "impedimento": {"quando": {"alinhamento": "parcial"}, "texto": "O que impede a conclusão?", "opcoes": {"informacao": "Falta ouvir Oficiais ou verificar informações.", "excesso": "Há excesso de propostas.", "decisao": "Faltou uma decisão clara."}}
+          },
+          "roteamento": [
+            {"quando": {"alinhamento": "nao"}, "resultado": "2A"},
+            {"quando": {"alinhamento": "parcial"}, "resultado": "2B"},
+            {"quando": {"alinhamento": "sim", "registro": ["nao", "parcial"]}, "resultado": "2C"},
+            {"quando": {"alinhamento": "sim", "registro": "sim"}, "resultado": "2D"}
+          ],
+          "resultados": {
+            "2A": {"titulo": "Produzir alinhamento executivo", "prioridade": "Reunir o núcleo administrativo para relacionar propósito, necessidades e capacidade de execução.", "instrumentos": ["Rotina de Alinhamento Executivo"], "primeira_acao": "Convocar reunião específica de alinhamento.", "risco": "Concentrar decisões ou permitir atuação sem coordenação.", "aprofundamento": "Capítulo 1, itens 1.3, 1.8, 1.9 e 1.10."},
+            "2B": {"titulo": "Concluir o alinhamento ainda parcial", "prioridade": "Resolver a pendência indicada antes de anunciar um plano concluído.", "instrumentos": ["Rotina de Alinhamento Executivo", "Escuta Estratégica", "Calendário Executivo"], "primeira_acao": "Retomar a reunião com uma decisão explícita a produzir.", "risco": "Tratar conversa inconclusa como compromisso coletivo.", "aprofundamento": "Capítulo 1, itens 1.3, 1.8 e 1.10."},
+            "2C": {"titulo": "Registrar e tornar executáveis as prioridades", "prioridade": "Registrar prioridade, responsável, primeiro marco e revisão.", "instrumentos": ["Diário do Venerável Mestre", "Calendário Executivo", "Governança Documental"], "primeira_acao": "Registrar uma prioridade, o Oficial responsável e a data de revisão.", "risco": "Decisões se perderem na memória.", "aprofundamento": "Capítulo 1, itens 1.10, 1.11 e 1.12."},
+            "2D": {"titulo": "Instalar a cadência de acompanhamento", "prioridade": "Transformar prioridades em ritmo estável de execução e revisão.", "instrumentos": ["Rotina de Alinhamento Executivo", "Diário do Venerável Mestre", "Rotinas mensal e trimestral"], "primeira_acao": "Definir a primeira revisão e as evidências observadas.", "risco": "Considerar que o plano encerrou o trabalho de liderança.", "aprofundamento": "Capítulo 1, itens 1.11, 1.12 e 1.14."}
+          }
+        },
+        "exercicio": {
+          "perguntas": {
+            "rotina": {"texto": "Como está a rotina de alinhamento com os Oficiais-chave?", "opcoes": {"regular": "Regular e produtiva.", "irregular": "Ocorre, mas é irregular ou pouco conclusiva.", "inexistente": "Não existe uma rotina de alinhamento."}},
+            "momento": {"texto": "Qual situação descreve melhor o momento atual?", "opcoes": {"alertas": "Há ocorrências recorrentes.", "clareza": "As prioridades perderam força ou clareza.", "avanco": "Não há ocorrências recorrentes e as prioridades avançam de forma verificável."}},
+            "area": {"quando": {"momento": "alertas"}, "texto": "Em qual área aparece o sinal mais urgente?", "opcoes": {"administrativa": "Administrativa, financeira ou cadastral.", "formativa": "Formativa ou de progressões.", "fraterna": "Fraterna, de presença ou convivência.", "ritual": "Ritual ou de condução.", "normativa": "Normativa ou disciplinar.", "indefinida": "Não consigo identificar."}},
+            "legado": {"quando": {"rotina": "regular", "momento": "avanco"}, "texto": "Como a gestão trata a formação de lideranças e o registro dos aprendizados?", "opcoes": {"ambos": "Ambos são consistentes.", "so_formacao": "Forma lideranças, mas registra pouco.", "so_registro": "Registra, mas forma poucas lideranças.", "nenhum": "Nenhum é consistente."}}
+          },
+          "roteamento": [
+            {"quando": {"momento": "alertas", "area": "indefinida"}, "resultado": "3B0"},
+            {"quando": {"momento": "alertas", "area": ["administrativa", "formativa", "fraterna", "ritual", "normativa"]}, "resultado": "3B"},
+            {"quando": {"momento": "clareza"}, "resultado": "3C"},
+            {"quando": {"momento": "avanco", "rotina": "inexistente"}, "resultado": "3A"},
+            {"quando": {"momento": "avanco", "rotina": "irregular"}, "resultado": "3E"},
+            {"quando": {"momento": "avanco", "rotina": "regular", "legado": "ambos"}, "resultado": "3D2"},
+            {"quando": {"momento": "avanco", "rotina": "regular", "legado": ["so_formacao", "so_registro", "nenhum"]}, "resultado": "3D1"}
+          ],
+          "resultados": {
+            "3A": {"titulo": "Restabelecer coordenação mínima", "prioridade": "Criar cadência mínima de informação, decisão e acompanhamento.", "instrumentos": ["Rotina de Alinhamento Executivo"], "primeira_acao": "Agendar o primeiro alinhamento com os Oficiais-chave.", "risco": "Administrar por impulso.", "aprofundamento": "Capítulo 1, itens 1.8, 1.9 e 1.11."},
+            "3B": {"titulo": "Isolar o alerta predominante", "prioridade": "Encaminhar o problema ao eixo e aos Oficiais competentes.", "referencia_diagnostica": "Indicadores de Alerta", "risco": "Corrigir sintomas ou absorver atribuições alheias.", "aprofundamento": "Capítulo 1, itens 1.8, 1.13 e 1.14; capítulo do Oficial relacionado."},
+            "3B0": {"titulo": "Realizar uma triagem institucional do alerta", "tipo": "terminal_ciclico", "prioridade": "Separar acontecimentos observáveis por dimensão.", "referencia_diagnostica": "Indicadores de Alerta", "instrumentos": ["Rotina de Alinhamento Executivo", "Diário do Venerável Mestre"], "primeira_acao": "Relacionar acontecimentos e examiná-los com os Oficiais-chave.", "risco": "Escolher causa única sem evidência.", "aprofundamento": "Capítulo 1, itens 1.8, 1.11 e 1.14."},
+            "3C": {"titulo": "Revisar prioridades do mandato", "prioridade": "Verificar propósito, responsável, prazo e capacidade de execução.", "instrumentos": ["Diário do Venerável Mestre", "Calendário Executivo", "Rotina trimestral"], "roteiro_derivado": "Revisão de Rumo do Mandato", "primeira_acao": "Escolher uma prioridade enfraquecida e identificar o ponto de falha.", "risco": "Responder à estagnação criando novas atividades.", "aprofundamento": "Capítulo 1, itens 1.3, 1.11, 1.12 e 1.14."},
+            "3D1": {"titulo": "Converter execução em continuidade", "prioridade": "Fazer o desempenho deixar capacidade instalada.", "instrumentos": ["Fomento de Novas Lideranças", "Governança Documental", "Diário do Venerável Mestre"], "risco": "Resultados dependerem das mesmas pessoas.", "aprofundamento": "Capítulo 1, itens 1.10, 1.12 e 1.15."},
+            "3D2": {"titulo": "Preservar foco e preparar legado", "prioridade": "Consolidar o que funciona sem ampliar escopo sem necessidade.", "referencia_diagnostica": "Indicadores de Desempenho Saudável", "instrumentos": ["Rotina trimestral", "Diário do Venerável Mestre"], "primeira_acao": "Registrar uma prática que contribuiu para a estabilidade.", "risco": "Crescer em atividades sem crescer em estrutura.", "aprofundamento": "Capítulo 1, itens 1.11, 1.14 e 1.15."},
+            "3E": {"titulo": "Estabilizar a coordenação que já produz resultados", "prioridade": "Dar regularidade ao alinhamento sem burocratizar.", "instrumentos": ["Rotina de Alinhamento Executivo", "Diário do Venerável Mestre"], "primeira_acao": "Definir periodicidade realista para revisar decisões e pendências.", "risco": "Depender de articulações informais.", "aprofundamento": "Capítulo 1, itens 1.8, 1.11 e 1.12."}
+          },
+          "modificadores": {
+            "3B": {
+              "administrativa": {"instrumento": "Supervisão Estratégica e Calendário Executivo", "acao": "Verificar obrigação e processo com Secretário, Tesoureiro ou Orador."},
+              "formativa": {"instrumento": "Liderança Pedagógica e Governança das Progressões", "acao": "Solicitar leitura fundamentada às Vigilâncias."},
+              "fraterna": {"instrumento": "Rotina trimestral de retenção", "acao": "Articular Chanceler, Vigilantes e Hospitaleiro."},
+              "ritual": {"instrumento": "Prontidão Executiva e rotina pré-sessão", "acao": "Rever o padrão com o Mestre de Cerimônias."},
+              "normativa": {"instrumento": "Protocolo de Resolução de Casos Omissos", "acao": "Verificar a norma e consultar o Orador."}
+            },
+            "3D1": {
+              "so_formacao": "Registrar uma prática relevante e as condições de continuidade.",
+              "so_registro": "Compartilhar uma responsabilidade concentrada com outro Mestre.",
+              "nenhum": "Compartilhar uma responsabilidade e registrar sua passagem."
+            }
+          }
+        },
+        "dificuldade": {
+          "perguntas": {
+            "natureza": {"texto": "Qual é a natureza predominante da dificuldade?", "opcoes": {"relacional": "Relacional.", "administrativa": "Administrativa, financeira ou documental.", "formativa": "Formativa ou de progressões.", "ritual": "Ritual.", "engajamento": "Engajamento, presença ou permanência.", "normativa": "Normativa, disciplinar ou caso omisso.", "indefinida": "Ainda não consigo identificar."}},
+            "compreensao": {"texto": "A situação já foi examinada com o Oficial ou instância responsável?", "opcoes": {"compartilhada": "Sim.", "parcial": "Parcialmente.", "individual": "Não; permanece percebida principalmente por mim."}},
+            "urgencia_administrativa": {"quando": {"natureza": "administrativa"}, "texto": "Há risco imediato de prazo, obrigação, movimentação financeira ou regularidade cadastral?", "opcoes": {"sim": "Sim ou não sei avaliar.", "nao": "Não."}}
+          },
+          "roteamento": [
+            {"quando": {"natureza": "indefinida"}, "resultado": "4A"},
+            {"quando": {"natureza": ["relacional", "administrativa", "formativa", "ritual", "engajamento", "normativa"], "compreensao": "individual"}, "resultado": "4A"},
+            {"quando": {"natureza": "relacional", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4B"},
+            {"quando": {"natureza": "administrativa", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4C"},
+            {"quando": {"natureza": "formativa", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4D"},
+            {"quando": {"natureza": "ritual", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4E"},
+            {"quando": {"natureza": "engajamento", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4F"},
+            {"quando": {"natureza": "normativa", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4G"}
+          ],
+          "resultados": {
+            "4A": {"titulo": "Distinguir percepção de problema verificável", "prioridade": "Reunir fatos e ouvir a função relacionada.", "instrumentos": ["Escuta Estratégica", "Rotina de Alinhamento", "Diário do Venerável Mestre"], "primeira_acao": "Descrever um acontecimento observável, seu impacto e a função que deveria conhecê-lo.", "risco": "Converter impressão em julgamento.", "aprofundamento": "Capítulo 1, itens 1.5, 1.8 e 1.10."},
+            "4B": {"titulo": "Dificuldade relacional", "prioridade": "Impedir exposição pública e estruturar mediação.", "instrumentos": ["Gestão de Crises e Mediação Fraterna"], "primeira_acao": "Marcar escuta reservada sem declarar culpados.", "risco": "Evitar o conflito ou encerrá-lo por imposição.", "aprofundamento": "Capítulo 1, item 1.5."},
+            "4C": {"titulo": "Dificuldade administrativa", "prioridade": "Proteger obrigações urgentes e isolar processo, responsável e ponto de falha.", "instrumentos": ["Supervisão Estratégica", "Auditoria de Conformidade", "Calendário Executivo"], "primeira_acao": "Identificar a obrigação, seu registro e o Oficial responsável.", "risco": "Corrigir apenas o sintoma.", "aprofundamento": "Capítulo 1, itens 1.3, 1.7, 1.8 e 1.11."},
+            "4D": {"titulo": "Dificuldade formativa", "prioridade": "Reunir avaliação colegiada, regularidade e evidências de preparo.", "instrumentos": ["Liderança Pedagógica", "Governança das Progressões"], "primeira_acao": "Solicitar leitura fundamentada às Vigilâncias.", "risco": "Decidir por pressão ou substituir as Vigilâncias.", "aprofundamento": "Capítulo 1, item 1.4; capítulos 2 e 3."},
+            "4E": {"titulo": "Dificuldade ritual", "prioridade": "Identificar se a falha decorre de preparação, coordenação, conhecimento ou infraestrutura.", "instrumentos": ["Prontidão Executiva", "Rotina pré-sessão"], "primeira_acao": "Rever o episódio com o Mestre de Cerimônias.", "risco": "Cobrar precisão sem alinhamento.", "aprofundamento": "Capítulo 1, itens 1.2, 1.8, 1.9 e 1.11; capítulo 8."},
+            "4F": {"titulo": "Dificuldade de engajamento", "prioridade": "Distinguir presença, vínculo, formação e convivência.", "referencia_diagnostica": "Indicadores de Alerta", "instrumentos": ["Interação com Chanceler, Vigilantes e Hospitaleiro", "Monitoramento trimestral de retenção"], "primeira_acao": "Solicitar leitura conjunta dos sinais gerais.", "risco": "Tratar ausência como desinteresse.", "aprofundamento": "Capítulo 1, itens 1.5, 1.8, 1.11 e 1.14."},
+            "4G": {"titulo": "Dificuldade normativa", "prioridade": "Estabelecer fundamento normativo, consulta e rastreabilidade.", "instrumentos": ["Protocolo de Resolução de Casos Omissos"], "primeira_acao": "Verificar a norma e consultar o Orador.", "risco": "Decidir por costume ou autoridade pessoal.", "aprofundamento": "Capítulo 1, itens 1.6 e 1.13; capítulo 7."}
+          },
+          "modificadores": {
+            "4C": {
+              "sim": {"prioridade": "Proteger imediatamente a obrigação e verificar sua regularidade com os Oficiais competentes.", "acao": "Identificar o prazo ou obrigação crítica e consultar Secretário, Tesoureiro ou Orador, conforme a matéria."},
+              "nao": {"prioridade": "Isolar processo, responsável, registro e ponto de falha antes de corrigir.", "acao": "Mapear onde o processo deveria funcionar e em que ponto deixou de produzir o resultado esperado."}
+            }
+          }
+        },
+        "continuidade": {
+          "perguntas": {
+            "lideranca": {"texto": "Em que estágio está a continuidade da liderança?", "opcoes": {"ausente": "Ainda não há formação intencional.", "formacao": "Há Irmãos desenvolvendo prontidão.", "sucessor": "O sucessor já foi legitimamente definido."}},
+            "registro": {"texto": "Como está o registro do mandato?", "opcoes": {"organizado": "Realizações, pendências e processos estão registrados.", "parcial": "O registro está incompleto ou disperso.", "memoria": "A gestão depende principalmente da memória."}},
+            "passagem": {"quando": {"lideranca": "sucessor", "registro": "organizado"}, "texto": "A reunião de transição e as providências formais já estão organizadas?", "opcoes": {"sim": "Sim.", "nao": "Parcialmente ou não."}}
+          },
+          "roteamento": [
+            {"quando": {"registro": ["parcial", "memoria"]}, "resultado": "5B"},
+            {"quando": {"registro": "organizado", "lideranca": "ausente"}, "resultado": "5A"},
+            {"quando": {"registro": "organizado", "lideranca": "formacao"}, "resultado": "5E"},
+            {"quando": {"registro": "organizado", "lideranca": "sucessor", "passagem": "nao"}, "resultado": "5C"},
+            {"quando": {"registro": "organizado", "lideranca": "sucessor", "passagem": "sim"}, "resultado": "5D"}
+          ],
+          "resultados": {
+            "5A": {"titulo": "Formar capacidade sucessória", "prioridade": "Criar oportunidades acompanhadas de responsabilidade.", "instrumentos": ["Fomento de Novas Lideranças", "Gestão Estratégica de Nomeações"], "primeira_acao": "Compartilhar uma responsabilidade com outro Mestre.", "risco": "Concentrar conhecimento ou preparar nomes por preferência.", "aprofundamento": "Capítulo 1, itens 1.3, 1.10, 1.14 e 1.15."},
+            "5B": {"titulo": "Converter experiência em memória institucional", "prioridade": "Registrar realizações, decisões, pendências e processos.", "instrumentos": ["Diário do Venerável Mestre", "Governança Documental", "Balanço Executivo"], "primeira_acao": "Elaborar relação sintética das pendências.", "risco": "Entregar documentos sem explicação ou explicações sem registro.", "aprofundamento": "Capítulo 1, itens 1.6, 1.10, 1.12, 1.13 e 1.15."},
+            "5E": {"titulo": "Consolidar a formação de lideranças", "prioridade": "Distribuir responsabilidades sem conduzir informalmente a sucessão.", "referencia_diagnostica": "Indicador de Prontidão Sucessória", "instrumentos": ["Fomento de Novas Lideranças", "Gestão Estratégica de Nomeações"], "primeira_acao": "Rever experiências já desenvolvidas e lacunas de coordenação.", "risco": "Confundir formação com indicação pessoal.", "aprofundamento": "Capítulo 1, itens 1.3, 1.10, 1.14 e 1.15."},
+            "5C": {"titulo": "Organizar a passagem formal", "prioridade": "Transferir responsabilidades, ativos, informações e obrigações.", "instrumentos": ["Protocolo de Sucessão Executiva"], "primeira_acao": "Agendar reunião de transição e preparar o Balanço Executivo.", "risco": "Reduzir a passagem a uma cerimônia.", "aprofundamento": "Capítulo 1, itens 1.6, 1.7, 1.13 e 1.15."},
+            "5D": {"titulo": "Preservar o legado sem tutelar o sucessor", "prioridade": "Concluir obrigações e estabelecer disponibilidade consultiva.", "instrumentos": ["Mentoria Pós-Mandato"], "primeira_acao": "Combinar como dúvidas de transição serão tratadas.", "risco": "Abandonar a gestão ou prolongar informalmente o comando.", "aprofundamento": "Capítulo 1, itens 1.13 e 1.15; Interlúdio."}
+          }
+        }
+      }
+    }
+  }
+}
