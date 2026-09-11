@@ -5303,7 +5303,7 @@ if perfil_acesso == "Leitor":
     elif tela_leitor == "cargos":
         st.markdown("### Explorar por cargo")
         st.markdown(
-            "Selecione uma função para consultar sua missão, temas centrais, "
+            "Selecione um cargo para consultar sua missão, temas centrais, "
             "instrumentos, risco de gestão e uma ação inicial."
         )
 

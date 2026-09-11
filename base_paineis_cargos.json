@@ -1,5 +1,5 @@
 {
-  "versao": "1.1.0",
+  "versao": "1.1.1",
   "finalidade": "Painéis determinísticos e contextuais para leitores de A Loja que Permanece.",
   "regras": [
     "Exibir somente o ramo correspondente às respostas.",
@@ -26,7 +26,7 @@
         "3D1": {"leitura": "O desempenho atual ainda precisa deixar capacidade instalada para que seus resultados ultrapassem o mandato.", "continuidade": ["Aplicar a ação correspondente à lacuna identificada.", "Acompanhar a participação dos envolvidos.", "Registrar o aprendizado produzido."]},
         "3D2": {"leitura": "A gestão apresenta execução, formação e memória; sua tarefa é consolidar o que funciona sem dispersar energia.", "continuidade": ["Manter a leitura dos indicadores.", "Documentar práticas relevantes.", "Preparar sua incorporação à rotina institucional."]},
         "3E": {"leitura": "A gestão produz resultados, mas ainda depende de articulações ocasionais em vez de uma coordenação institucionalizada.", "continuidade": ["Registrar encaminhamentos essenciais.", "Revisar pendências na periodicidade escolhida.", "Preservar a flexibilidade que favorece a execução."]},
-        "4A": {"leitura": "A dificuldade ainda não foi compreendida de forma suficientemente compartilhada para receber uma solução segura.", "continuidade": ["Ouvir reservadamente a função relacionada.", "Comparar percepções com fatos observáveis.", "Refazer o diagnóstico quando a natureza estiver clara."]},
+        "4A": {"leitura": "A dificuldade ainda não foi compreendida de forma suficientemente compartilhada para receber uma solução segura.", "continuidade": ["Ouvir reservadamente o Oficial ou a instância responsável.", "Comparar percepções com fatos observáveis.", "Refazer o diagnóstico quando a natureza estiver clara."]},
         "4B": {"leitura": "O conflito exige preservação da dignidade das partes e mediação proporcional, não exposição ou imposição.", "continuidade": ["Ouvir as partes com reserva.", "Identificar o ponto institucional em disputa.", "Acompanhar os efeitos do encaminhamento."]},
         "4C": {"leitura": "A dificuldade precisa ser tratada segundo sua urgência e localizada no processo e na função correspondentes.", "continuidade": ["Proteger eventual prazo crítico.", "Corrigir o ponto de falha do processo.", "Instalar verificação proporcional."]},
         "4D": {"leitura": "A decisão formativa deve se apoiar em avaliação colegiada, regularidade e evidências de preparo.", "continuidade": ["Identificar a lacuna formativa.", "Garantir espaço de instrução.", "Estabelecer critério de nova avaliação."]},
@@ -166,7 +166,7 @@
             {"quando": {"natureza": "normativa", "compreensao": ["compartilhada", "parcial"]}, "resultado": "4G"}
           ],
           "resultados": {
-            "4A": {"titulo": "Distinguir percepção de problema verificável", "prioridade": "Reunir fatos e ouvir a função relacionada.", "instrumentos": ["Escuta Estratégica", "Rotina de Alinhamento", "Diário do Venerável Mestre"], "primeira_acao": "Descrever um acontecimento observável, seu impacto e a função que deveria conhecê-lo.", "risco": "Converter impressão em julgamento.", "aprofundamento": "Capítulo 1, itens 1.5, 1.8 e 1.10."},
+            "4A": {"titulo": "Distinguir percepção de problema verificável", "prioridade": "Reunir fatos e ouvir o Oficial diretamente relacionado.", "instrumentos": ["Escuta Estratégica", "Rotina de Alinhamento", "Diário do Venerável Mestre"], "primeira_acao": "Descrever um acontecimento observável, seu impacto e identificar o Oficial responsável por acompanhá-lo.", "risco": "Converter impressão em julgamento.", "aprofundamento": "Capítulo 1, itens 1.5, 1.8 e 1.10."},
             "4B": {"titulo": "Dificuldade relacional", "prioridade": "Impedir exposição pública e estruturar mediação.", "instrumentos": ["Gestão de Crises e Mediação Fraterna"], "primeira_acao": "Marcar escuta reservada sem declarar culpados.", "risco": "Evitar o conflito ou encerrá-lo por imposição.", "aprofundamento": "Capítulo 1, item 1.5."},
             "4C": {"titulo": "Dificuldade administrativa", "prioridade": "Proteger obrigações urgentes e isolar processo, responsável e ponto de falha.", "instrumentos": ["Supervisão Estratégica", "Auditoria de Conformidade", "Calendário Executivo"], "primeira_acao": "Identificar a obrigação, seu registro e o Oficial responsável.", "risco": "Corrigir apenas o sintoma.", "aprofundamento": "Capítulo 1, itens 1.3, 1.7, 1.8 e 1.11."},
             "4D": {"titulo": "Dificuldade formativa", "prioridade": "Reunir avaliação colegiada, regularidade e evidências de preparo.", "instrumentos": ["Liderança Pedagógica", "Governança das Progressões"], "primeira_acao": "Solicitar leitura fundamentada às Vigilâncias.", "risco": "Decidir por pressão ou substituir as Vigilâncias.", "aprofundamento": "Capítulo 1, item 1.4; capítulos 2 e 3."},
