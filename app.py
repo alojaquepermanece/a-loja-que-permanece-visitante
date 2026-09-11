@@ -4736,7 +4736,125 @@ def carregar_conteudos_por_cargo():
     ]
 
 
+@st.cache_data
+def carregar_paineis_por_cargo():
+    caminho = BASE / "base_paineis_cargos.json"
+    with caminho.open("r", encoding="utf-8") as arquivo:
+        dados = json.load(arquivo)
+    return dados.get("paineis", {})
+
+
+def condicoes_atendidas(condicoes, respostas):
+    for chave, esperado in condicoes.items():
+        resposta = respostas.get(chave)
+        if isinstance(esperado, list):
+            if resposta not in esperado:
+                return False
+        elif resposta != esperado:
+            return False
+    return True
+
+
+def limpar_painel_cargo():
+    for chave in list(st.session_state.keys()):
+        if chave.startswith("painel_cargo_"):
+            st.session_state.pop(chave, None)
+
+
+def iniciar_painel_cargo(identificador):
+    limpar_painel_cargo()
+    st.session_state.painel_cargo_id = identificador
+    st.session_state.painel_cargo_jornada = None
+    st.session_state.painel_cargo_respostas = {}
+    st.session_state.leitor_tela = "cargo_painel"
+
+
+def escolher_jornada_cargo(jornada):
+    st.session_state.painel_cargo_jornada = jornada
+    st.session_state.painel_cargo_respostas = {}
+    st.session_state.pop("painel_cargo_resultado", None)
+
+
+def voltar_painel_cargo():
+    respostas = st.session_state.setdefault(
+        "painel_cargo_respostas", {}
+    )
+    if respostas:
+        ultima = next(reversed(respostas))
+        respostas.pop(ultima, None)
+        st.session_state.pop("painel_cargo_resultado", None)
+    elif st.session_state.get("painel_cargo_jornada"):
+        st.session_state.painel_cargo_jornada = None
+    else:
+        lista_cargos_leitor()
+
+
+def proxima_pergunta_cargo(jornada, respostas):
+    for identificador, pergunta in jornada.get("perguntas", {}).items():
+        if identificador in respostas:
+            continue
+        condicoes = pergunta.get("quando", {})
+        if condicoes_atendidas(condicoes, respostas):
+            return identificador, pergunta
+    return None, None
+
+
+def localizar_resultado_cargo(jornada, respostas):
+    correspondencias = [
+        regra.get("resultado")
+        for regra in jornada.get("roteamento", [])
+        if condicoes_atendidas(regra.get("quando", {}), respostas)
+    ]
+    return correspondencias[0] if len(correspondencias) == 1 else None
+
+
+def compor_resultado_cargo(painel, jornada, codigo, respostas):
+    complemento = painel.get("complementos_resultados", {}).get(
+        codigo, {}
+    )
+    resultado = {
+        **complemento,
+        **jornada.get("resultados", {}).get(codigo, {}),
+    }
+
+    acao_transicao = jornada.get("acoes_por_transicao", {}).get(
+        codigo, {}
+    ).get(respostas.get("transicao"))
+    if acao_transicao:
+        resultado["primeira_acao"] = acao_transicao
+
+    modificador = jornada.get("modificadores", {}).get(codigo, {})
+    chave_modificador = None
+    if codigo == "3B":
+        chave_modificador = respostas.get("area")
+    elif codigo == "3D1":
+        chave_modificador = respostas.get("legado")
+    elif codigo == "4C":
+        chave_modificador = respostas.get("urgencia_administrativa")
+
+    ajuste = modificador.get(chave_modificador)
+    if isinstance(ajuste, str):
+        resultado["primeira_acao"] = ajuste
+    elif isinstance(ajuste, dict):
+        if ajuste.get("acao"):
+            resultado["primeira_acao"] = ajuste["acao"]
+        if ajuste.get("prioridade"):
+            resultado["prioridade"] = ajuste["prioridade"]
+        if ajuste.get("instrumento"):
+            instrumentos = resultado.get("instrumentos", [])
+            if isinstance(instrumentos, str):
+                instrumentos = [instrumentos]
+            resultado["instrumentos"] = [
+                *instrumentos,
+                ajuste["instrumento"],
+            ]
+    return resultado
+
+
 def abrir_cargo_leitor(identificador):
+    if identificador == "conteudo:cargo:veneravel_mestre":
+        iniciar_painel_cargo("veneravel_mestre")
+        return
     st.session_state.leitor_cargo_atual = identificador
     st.session_state.leitor_tela = "cargo_detalhe"
 
@@ -4744,11 +4862,13 @@ def abrir_cargo_leitor(identificador):
 def lista_cargos_leitor():
     st.session_state.leitor_tela = "cargos"
     st.session_state.pop("leitor_cargo_atual", None)
+    limpar_painel_cargo()
 
 
 def inicio_leitor():
     st.session_state.leitor_tela = "inicio"
     st.session_state.pop("leitor_cargo_atual", None)
+    limpar_painel_cargo()
 
 
 def iniciar_apoio_afastamento(etapa="entrada"):
@@ -5085,6 +5205,7 @@ if perfil_acesso == "Leitor":
 
     try:
         conteudos_cargos = carregar_conteudos_por_cargo()
+        paineis_cargos = carregar_paineis_por_cargo()
     except (OSError, json.JSONDecodeError, TypeError) as erro:
         st.error(
             "Não foi possível carregar a navegação por cargos: "
@@ -5157,6 +5278,156 @@ if perfil_acesso == "Leitor":
                     ):
                         abrir_cargo_leitor(conteudo["id"])
                         st.rerun()
+
+    elif tela_leitor == "cargo_painel":
+        identificador_painel = st.session_state.get("painel_cargo_id")
+        painel = paineis_cargos.get(identificador_painel)
+
+        if painel is None:
+            st.error("Este painel ainda não está disponível.")
+        else:
+            st.markdown(f"### {painel.get('titulo', 'Painel por cargo')}")
+            st.caption(painel.get("referencia", ""))
+
+            jornada_id = st.session_state.get("painel_cargo_jornada")
+            if not jornada_id:
+                st.markdown("#### Missão essencial")
+                st.markdown(painel.get("missao", ""))
+                st.markdown("#### Em que momento você está?")
+                st.markdown(
+                    "Escolha a situação que melhor corresponde à sua "
+                    "necessidade atual."
+                )
+                for entrada in painel.get("entrada", []):
+                    if st.button(
+                        entrada.get("rotulo", "Continuar"),
+                        key=f"painel_cargo_entrada_{entrada.get('id')}",
+                        use_container_width=True,
+                    ):
+                        escolher_jornada_cargo(entrada.get("id"))
+                        st.rerun()
+            else:
+                jornada = painel.get("jornadas", {}).get(jornada_id)
+                if jornada is None:
+                    st.error("Esta jornada ainda não está disponível.")
+                else:
+                    respostas = st.session_state.setdefault(
+                        "painel_cargo_respostas", {}
+                    )
+                    codigo_resultado = st.session_state.get(
+                        "painel_cargo_resultado"
+                    )
+
+                    if not codigo_resultado:
+                        pergunta_id, pergunta = proxima_pergunta_cargo(
+                            jornada, respostas
+                        )
+                        if pergunta is not None:
+                            st.markdown(f"#### {pergunta.get('texto', '')}")
+                            opcoes = pergunta.get("opcoes", {})
+                            with st.form(
+                                f"painel_cargo_form_{jornada_id}_{pergunta_id}"
+                            ):
+                                resposta = st.radio(
+                                    "Escolha uma opção",
+                                    list(opcoes.keys()),
+                                    format_func=lambda opcao: opcoes[opcao],
+                                    index=None,
+                                    key=(
+                                        "painel_cargo_widget_"
+                                        f"{jornada_id}_{pergunta_id}"
+                                    ),
+                                )
+                                avancar = st.form_submit_button(
+                                    "AVANÇAR",
+                                    use_container_width=True,
+                                )
+                            if avancar:
+                                if resposta is None:
+                                    st.warning(
+                                        "Escolha uma opção para continuar."
+                                    )
+                                else:
+                                    respostas[pergunta_id] = resposta
+                                    st.rerun()
+                        else:
+                            codigo_resultado = localizar_resultado_cargo(
+                                jornada, respostas
+                            )
+                            if codigo_resultado:
+                                st.session_state.painel_cargo_resultado = (
+                                    codigo_resultado
+                                )
+                                st.rerun()
+                            else:
+                                st.error(
+                                    "Não foi possível determinar uma "
+                                    "orientação para estas respostas."
+                                )
+                    else:
+                        resultado = compor_resultado_cargo(
+                            painel,
+                            jornada,
+                            codigo_resultado,
+                            respostas,
+                        )
+                        st.success("Orientação concluída.")
+                        st.markdown(
+                            f"### {resultado.get('titulo', 'Orientação')}"
+                        )
+
+                        if resultado.get("leitura"):
+                            st.markdown("#### Leitura da situação")
+                            st.markdown(resultado["leitura"])
+
+                        st.markdown("#### Prioridade")
+                        st.info(resultado.get("prioridade", "Não informado."))
+
+                        instrumentos_resultado = resultado.get(
+                            "instrumentos", []
+                        )
+                        if isinstance(instrumentos_resultado, str):
+                            instrumentos = [instrumentos_resultado]
+                        else:
+                            instrumentos = list(instrumentos_resultado)
+                        if resultado.get("roteiro_derivado"):
+                            instrumentos.append(resultado["roteiro_derivado"])
+                        if instrumentos:
+                            st.markdown("#### Instrumentos relacionados")
+                            for instrumento in dict.fromkeys(instrumentos):
+                                st.markdown(f"- {instrumento}")
+
+                        if resultado.get("referencia_diagnostica"):
+                            st.markdown("#### Referência para diagnóstico")
+                            st.markdown(resultado["referencia_diagnostica"])
+
+                        if resultado.get("primeira_acao"):
+                            st.markdown("#### Primeira ação")
+                            st.info(resultado["primeira_acao"])
+
+                        st.markdown("#### Risco a evitar")
+                        st.warning(resultado.get("risco", "Não informado."))
+
+                        continuidade = resultado.get("continuidade", [])
+                        if continuidade:
+                            st.markdown("#### Continuidade")
+                            for passo in continuidade:
+                                st.markdown(f"- {passo}")
+
+                        st.markdown("#### Para aprofundar na obra")
+                        st.markdown(
+                            resultado.get(
+                                "aprofundamento", "Não informado."
+                            )
+                        )
+
+                        if st.button(
+                            "REFAZER O DIAGNÓSTICO",
+                            key="painel_cargo_refazer",
+                            use_container_width=True,
+                        ):
+                            escolher_jornada_cargo(jornada_id)
+                            st.rerun()
 
     elif tela_leitor == "cargo_detalhe":
         identificador = st.session_state.get("leitor_cargo_atual")
@@ -5737,6 +6008,8 @@ if perfil_acesso == "Leitor":
             ):
                 if tela_leitor == "cargo_detalhe":
                     lista_cargos_leitor()
+                elif tela_leitor == "cargo_painel":
+                    voltar_painel_cargo()
                 else:
                     inicio_leitor()
                 st.rerun()
