@@ -4736,7 +4736,6 @@ def carregar_conteudos_por_cargo():
     ]
 
 
-@st.cache_data
 def carregar_paineis_por_cargo():
     caminho = BASE / "base_paineis_cargos.json"
     with caminho.open("r", encoding="utf-8") as arquivo:
