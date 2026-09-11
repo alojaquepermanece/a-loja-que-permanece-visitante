@@ -4547,7 +4547,13 @@ st.markdown(
 if "porta_entrada" not in st.session_state:
     st.session_state.porta_entrada = None
 
-if st.user.is_logged_in and st.session_state.porta_entrada is None:
+
+def usuario_google_logado():
+    """Consulta o login sem falhar quando a autenticação não está configurada."""
+    return bool(getattr(st.user, "is_logged_in", False))
+
+
+if usuario_google_logado() and st.session_state.porta_entrada is None:
     st.session_state.porta_entrada = "Leitor"
 
 
@@ -4870,7 +4876,7 @@ st.title("A Loja que Permanece")
 st.caption("Experiência digital da obra")
 
 if perfil_acesso == "Leitor":
-    if not st.user.is_logged_in:
+    if not usuario_google_logado():
         st.subheader("Acesso do Leitor")
         st.markdown(
             "Entre com sua conta Google para continuar."
