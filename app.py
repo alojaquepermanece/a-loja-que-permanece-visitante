@@ -5421,13 +5421,27 @@ if perfil_acesso == "Leitor":
                             )
                         )
 
-                        if st.button(
-                            "REFAZER O DIAGNÓSTICO",
-                            key="painel_cargo_refazer",
-                            use_container_width=True,
-                        ):
-                            escolher_jornada_cargo(jornada_id)
-                            st.rerun()
+                        col_refazer, col_painel = st.columns(2)
+                        with col_refazer:
+                            if st.button(
+                                "REFAZER O DIAGNÓSTICO",
+                                key="painel_cargo_refazer",
+                                use_container_width=True,
+                            ):
+                                escolher_jornada_cargo(jornada_id)
+                                st.rerun()
+                        with col_painel:
+                            if st.button(
+                                "PAINEL DO VENERÁVEL MESTRE",
+                                key="painel_cargo_voltar_painel",
+                                use_container_width=True,
+                            ):
+                                st.session_state.painel_cargo_jornada = None
+                                st.session_state.painel_cargo_respostas = {}
+                                st.session_state.pop(
+                                    "painel_cargo_resultado", None
+                                )
+                                st.rerun()
 
     elif tela_leitor == "cargo_detalhe":
         identificador = st.session_state.get("leitor_cargo_atual")
