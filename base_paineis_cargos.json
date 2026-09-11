@@ -1,5 +1,5 @@
 {
-  "versao": "1.0.0",
+  "versao": "1.1.0",
   "finalidade": "Painéis determinísticos e contextuais para leitores de A Loja que Permanece.",
   "regras": [
     "Exibir somente o ramo correspondente às respostas.",
@@ -200,6 +200,162 @@
             "5E": {"titulo": "Consolidar a formação de lideranças", "prioridade": "Distribuir responsabilidades sem conduzir informalmente a sucessão.", "referencia_diagnostica": "Indicador de Prontidão Sucessória", "instrumentos": ["Fomento de Novas Lideranças", "Gestão Estratégica de Nomeações"], "primeira_acao": "Rever experiências já desenvolvidas e lacunas de coordenação.", "risco": "Confundir formação com indicação pessoal.", "aprofundamento": "Capítulo 1, itens 1.3, 1.10, 1.14 e 1.15."},
             "5C": {"titulo": "Organizar a passagem formal", "prioridade": "Transferir responsabilidades, ativos, informações e obrigações.", "instrumentos": ["Protocolo de Sucessão Executiva"], "primeira_acao": "Agendar reunião de transição e preparar o Balanço Executivo.", "risco": "Reduzir a passagem a uma cerimônia.", "aprofundamento": "Capítulo 1, itens 1.6, 1.7, 1.13 e 1.15."},
             "5D": {"titulo": "Preservar o legado sem tutelar o sucessor", "prioridade": "Concluir obrigações e estabelecer disponibilidade consultiva.", "instrumentos": ["Mentoria Pós-Mandato"], "primeira_acao": "Combinar como dúvidas de transição serão tratadas.", "risco": "Abandonar a gestão ou prolongar informalmente o comando.", "aprofundamento": "Capítulo 1, itens 1.13 e 1.15; Interlúdio."}
+          }
+        }
+      }
+    },
+    "primeiro_vigilante": {
+      "titulo": "Painel do Primeiro Vigilante",
+      "referencia": "Capítulo 2",
+      "missao": "O Primeiro Vigilante exerce a coordenação instrucional intermediária e atua como garantidor da continuidade executiva da Oficina, reunindo governança pedagógica da formação dos Companheiros, comando litúrgico da Coluna do Sul e prontidão permanente para assumir a direção da Loja.",
+      "entrada": [
+        {"id": "preparacao", "grupo": "momento", "rotulo": "Estou me preparando para exercer o cargo."},
+        {"id": "organizacao", "grupo": "formacao", "rotulo": "Quero organizar a formação dos Companheiros."},
+        {"id": "acompanhamento", "grupo": "formacao", "rotulo": "Estou acompanhando o desenvolvimento da Coluna."},
+        {"id": "exaltacao", "grupo": "progressao", "rotulo": "Preciso avaliar uma possível Exaltação."},
+        {"id": "dificuldade", "grupo": "necessidade", "rotulo": "Estou enfrentando uma dificuldade específica."},
+        {"id": "prontidao", "grupo": "continuidade", "rotulo": "Quero avaliar minha prontidão executiva."}
+      ],
+      "jornadas": {
+        "preparacao": {
+          "perguntas": {
+            "transicao": {"texto": "Como está a transição com o Primeiro Vigilante atual ou anterior?", "opcoes": {"estruturada": "Há diálogo e acesso aos registros.", "parcial": "Há diálogo, mas faltam informações ou registros.", "inexistente": "Ainda não houve passagem organizada."}},
+            "visao": {"texto": "Qual é sua visão atual da Coluna do Sul?", "opcoes": {"confiavel": "Conheço os Companheiros, o estágio formativo, as instruções e as pendências.", "parcial": "Conheço apenas parte da situação.", "insuficiente": "Ainda não possuo uma visão confiável."}},
+            "registros": {"quando": {"visao": "confiavel"}, "texto": "Como estão os registros formativos?", "opcoes": {"organizados": "Organizados e atualizados.", "parciais": "Parciais, genéricos ou dispersos.", "inexistentes": "Inexistentes."}}
+          },
+          "roteamento": [
+            {"quando": {"visao": "insuficiente"}, "resultado": "1A"},
+            {"quando": {"visao": "parcial"}, "resultado": "1B"},
+            {"quando": {"visao": "confiavel", "registros": ["parciais", "inexistentes"]}, "resultado": "1C"},
+            {"quando": {"visao": "confiavel", "registros": "organizados"}, "resultado": "1D"}
+          ],
+          "resultados": {
+            "1A": {"titulo": "Construir uma visão confiável da Coluna", "leitura": "Não é seguro planejar instruções ou progressões sem conhecer pessoas, percurso já realizado e pendências.", "prioridade": "Levantar composição da Coluna, instruções ministradas, interstícios, trabalhos, presença e dificuldades observáveis.", "instrumentos": ["Dossiê Formativo Individual", "Plano Diretor de Instrução"], "primeira_acao": "Relacionar as áreas da Coluna que ainda não são conhecidas e definir onde cada informação será verificada.", "risco": "Planejar a partir de suposições.", "continuidade": ["Confirmar as fontes.", "Separar fatos de impressões.", "Consolidar um quadro geral sem inserir dados no aplicativo."], "aprofundamento": "Capítulo 2, itens 2.3, 2.7, 2.9 e 2.11."},
+            "1B": {"titulo": "Completar lacunas da transição", "leitura": "A compreensão existente ainda pode ocultar lacunas capazes de comprometer instrução ou progressão.", "prioridade": "Completar primeiro informações sobre requisitos, conteúdo ministrado e pendências individuais.", "instrumentos": ["Sincronia Documental com a Secretaria", "Dossiê Formativo Individual"], "primeira_acao": "Relacionar as lacunas capazes de afetar instruções, acompanhamento ou futuras progressões.", "risco": "Tratar conhecimento parcial como diagnóstico suficiente.", "continuidade": ["Conferir os registros.", "Validar o estágio da turma.", "Somente então fechar o plano."], "aprofundamento": "Capítulo 2, itens 2.3, 2.7 e 2.11."},
+            "1C": {"titulo": "Reconstruir a memória pedagógica", "leitura": "O conhecimento do cargo ainda depende de memória ou registros incapazes de fundamentar decisões futuras.", "prioridade": "Converter o que é conhecido em registro técnico, objetivo e restrito.", "instrumentos": ["Memória Pedagógica", "Dossiê Formativo Individual"], "primeira_acao": "Registrar instruções já confirmadas, marcos formais e pendências verificáveis.", "risco": "Produzir avaliações subjetivas ou armazenar informações sensíveis.", "continuidade": ["Conferir com a Secretaria.", "Estabelecer rotina de atualização.", "Registrar somente o necessário."], "aprofundamento": "Capítulo 2, itens 2.3, 2.9 e 2.11."},
+            "1D": {"titulo": "Converter a transição em plano de atuação", "leitura": "A base recebida permite avançar da compreensão para o planejamento da formação.", "prioridade": "Transformar o diagnóstico em sequência instrucional, calendário e rotina de acompanhamento.", "instrumentos": ["Plano Diretor de Instrução", "Prontidão Pedagógica"], "primeira_acao": "Selecionar as necessidades formativas que orientarão o primeiro ciclo de instruções.", "risco": "Considerar que bons registros substituem ação pedagógica.", "continuidade": ["Alinhar a pauta com o Venerável Mestre.", "Coordenar-se com o Segundo Vigilante.", "Preparar os materiais."], "aprofundamento": "Capítulo 2, itens 2.7, 2.9 e 2.10."}
+          },
+          "modificadores_gerais": [
+            {"quando": {"transicao": "estruturada"}, "resultados": ["1A", "1B", "1C", "1D"], "complemento_acao": "Utilize o diálogo e os registros já disponíveis, confirmando a ação dentro do fluxo de passagem existente."},
+            {"quando": {"transicao": "parcial"}, "resultados": ["1A", "1B", "1C", "1D"], "complemento_acao": "Execute a ação dentro do diálogo já iniciado, identificando previamente as informações ou registros ainda ausentes."},
+            {"quando": {"transicao": "inexistente"}, "resultados": ["1A", "1B", "1C", "1D"], "complemento_acao": "Formalize a passagem necessária e verifique as informações com o Venerável Mestre, a Secretaria e os demais Oficiais competentes."}
+          ]
+        },
+        "organizacao": {
+          "perguntas": {
+            "plano": {"texto": "Como está o plano instrucional dos Companheiros?", "opcoes": {"estruturado": "Estruturado, progressivo e comunicado.", "parcial": "Existe parcialmente, mas ainda depende de improvisação.", "inexistente": "Não existe plano definido."}},
+            "condicoes": {"quando": {"plano": "estruturado"}, "texto": "Há espaço em pauta e materiais preparados?", "opcoes": {"ambos": "Ambos estão garantidos.", "um": "Apenas um deles está garantido.", "nenhum": "Nenhum está garantido."}},
+            "verificacao": {"quando": {"plano": "estruturado", "condicoes": "ambos"}, "texto": "Como a compreensão é verificada?", "opcoes": {"profunda": "Por perguntas, trabalhos e articulação com palavras próprias.", "repeticao": "Principalmente por presença ou repetição do conteúdo.", "inexistente": "Ainda não existe verificação consistente."}}
+          },
+          "roteamento": [
+            {"quando": {"plano": ["parcial", "inexistente"]}, "resultado": "2A"},
+            {"quando": {"plano": "estruturado", "condicoes": ["um", "nenhum"]}, "resultado": "2B"},
+            {"quando": {"plano": "estruturado", "condicoes": "ambos", "verificacao": ["repeticao", "inexistente"]}, "resultado": "2C"},
+            {"quando": {"plano": "estruturado", "condicoes": "ambos", "verificacao": "profunda"}, "resultado": "2D"}
+          ],
+          "resultados": {
+            "2A": {"titulo": "Estruturar o Plano Diretor de Instrução", "leitura": "A formação permanece vulnerável à sobra de tempo e a decisões ocasionais.", "prioridade": "Definir sequência pedagógica, temas, momentos de verificação e horizonte de execução.", "instrumentos": ["Plano Diretor de Instrução", "Planejamento Curricular"], "primeira_acao": "Relacionar o conteúdo necessário e distribuí-lo numa sequência realista.", "risco": "Confundir lista de temas com percurso formativo.", "continuidade": ["Negociar tempo em pauta.", "Preparar materiais.", "Coordenar a continuidade entre os graus."], "aprofundamento": "Capítulo 2, itens 2.3, 2.9, 2.10 e 2.12."},
+            "2B": {"titulo": "Garantir condições de execução", "leitura": "O plano existe, mas pode fracassar por falta de espaço institucional ou prontidão de insumos.", "prioridade": "Proteger a execução antes de ampliar o currículo.", "instrumentos": ["Garantia de Pauta", "Prontidão de Insumos", "Prontidão Pedagógica"], "primeira_acao": "Identificar a condição ausente e acordá-la antes da próxima sessão.", "risco": "Responsabilizar os Companheiros por uma formação que não recebeu condições adequadas.", "continuidade": ["Confirmar a pauta.", "Preparar os materiais.", "Alinhar a comunicação com o Segundo Vigilante."], "aprofundamento": "Capítulo 2, itens 2.3, 2.9, 2.10 e 2.12."},
+            "2C": {"titulo": "Superar a transmissão passiva", "leitura": "A regularidade aparente pode ocultar uma formação apenas formal.", "prioridade": "Verificar compreensão simbólica e capacidade de articulação, não apenas exposição ao conteúdo.", "instrumentos": ["Instrução Socrática", "Auditoria de Assimilação"], "primeira_acao": "Formular uma pergunta que exija ao Companheiro explicar um conceito com palavras próprias.", "risco": "Falsa formação.", "continuidade": ["Incorporar perguntas abertas.", "Orientar trabalhos.", "Realizar conversas individuais quando necessário."], "aprofundamento": "Capítulo 2, itens 2.4, 2.9, 2.10 e estudo de caso das páginas 31–32."},
+            "2D": {"titulo": "Consolidar a cadência pedagógica", "leitura": "A estrutura formativa está instalada e deve ser preservada sem se tornar mecânica.", "prioridade": "Manter sequência, profundidade, registro e capacidade de adaptação.", "instrumentos": ["Plano Diretor de Instrução", "Rotina pré, durante e pós-sessão"], "primeira_acao": "Definir a próxima revisão do plano e a evidência qualitativa que será observada.", "risco": "Confundir estabilidade com repetição burocrática.", "continuidade": ["Revisar mensalmente o progresso.", "Atualizar o plano conforme lacunas reais.", "Preservar a continuidade pedagógica."], "aprofundamento": "Capítulo 2, itens 2.9, 2.10 e 2.13."}
+          }
+        },
+        "acompanhamento": {
+          "perguntas": {
+            "registros": {"texto": "Como estão os registros de desenvolvimento?", "opcoes": {"organizados": "Organizados e atualizados.", "parciais": "Parciais ou genéricos.", "memoria": "Dependem principalmente da memória."}},
+            "participacao": {"texto": "Como está a participação dos Companheiros?", "opcoes": {"ativa": "Ativa e questionadora.", "passiva": "Regular, porém passiva.", "queda": "Está em queda."}},
+            "assimilacao": {"texto": "Como está a assimilação do conteúdo?", "opcoes": {"demonstrada": "Foi demonstrada de forma consistente.", "incerta": "Ainda não foi verificada.", "lacunas": "Há lacunas observáveis."}}
+          },
+          "roteamento": [
+            {"quando": {"assimilacao": "lacunas"}, "resultado": "3C"},
+            {"quando": {"assimilacao": ["demonstrada", "incerta"], "participacao": "queda"}, "resultado": "3D"},
+            {"quando": {"assimilacao": "incerta", "participacao": ["ativa", "passiva"]}, "resultado": "3B"},
+            {"quando": {"assimilacao": "demonstrada", "participacao": ["ativa", "passiva"], "registros": ["parciais", "memoria"]}, "resultado": "3A"},
+            {"quando": {"assimilacao": "demonstrada", "participacao": ["ativa", "passiva"], "registros": "organizados"}, "resultado": "3E"}
+          ],
+          "resultados": {
+            "3A": {"titulo": "Reconstruir o acompanhamento formativo", "leitura": "A evolução percebida ainda não possui memória suficiente para sustentar decisões futuras.", "prioridade": "Estruturar registro instrucional objetivo e proporcional.", "instrumentos": ["Dossiê Formativo Individual", "Sincronia Documental com a Secretaria"], "primeira_acao": "Registrar marcos já confirmados e definir periodicidade de atualização.", "risco": "Amnésia pedagógica ou excesso de dados pessoais.", "continuidade": ["Conferir interstícios.", "Conferir instruções e trabalhos.", "Manter observações estritamente formativas."], "aprofundamento": "Capítulo 2, itens 2.3, 2.9 e 2.11."},
+            "3B": {"titulo": "Verificar a profundidade da aprendizagem", "leitura": "Não há base suficiente para afirmar que presença e execução correspondem a compreensão.", "prioridade": "Produzir evidências qualitativas de assimilação.", "instrumentos": ["Instrução Socrática", "Curadoria Individualizada"], "primeira_acao": "Realizar uma pergunta aberta ou conversa breve sobre um símbolo já estudado.", "risco": "Transformar a avaliação em prova de memorização.", "continuidade": ["Comparar as respostas ao percurso previsto.", "Ajustar a instrução.", "Verificar novamente a assimilação."], "aprofundamento": "Capítulo 2, itens 2.4, 2.9, 2.10 e 2.12."},
+            "3C": {"titulo": "Corrigir uma lacuna formativa", "leitura": "A dificuldade identificada pede intervenção pedagógica antes de qualquer avanço.", "prioridade": "Compreender a natureza da lacuna e oferecer orientação proporcional.", "instrumentos": ["Mapeamento de Lacunas", "Curadoria Individualizada"], "primeira_acao": "Conversar reservadamente com o Companheiro e pedir que explique onde encontra dificuldade.", "risco": "Rotular o Irmão ou atribuir a dificuldade a caráter ou desinteresse.", "continuidade": ["Adaptar a instrução.", "Verificar novamente.", "Registrar somente observações técnicas."], "aprofundamento": "Capítulo 2, itens 2.4, 2.9, 2.10 e 2.11."},
+            "3D": {"titulo": "Investigar queda de participação", "leitura": "O afastamento pode decorrer de vínculo, organização, método ou circunstâncias ainda não conhecidas.", "prioridade": "Ouvir antes de interpretar e preservar a integração do Companheiro.", "instrumentos": ["Curadoria Individualizada", "Fortalecimento de Vínculos"], "primeira_acao": "Realizar contato reservado, sem cobrança, para compreender o que mudou.", "risco": "Tratar baixa participação como falta de compromisso.", "continuidade": ["Articular o apoio adequado.", "Ajustar método ou integração quando necessário.", "Acompanhar apenas o retorno institucional necessário."], "aprofundamento": "Capítulo 2, itens 2.5, 2.7 e 2.10."},
+            "3E": {"titulo": "Preservar uma formação saudável", "leitura": "A Coluna apresenta base pedagógica consistente; o desafio é aprofundar sem ampliar tarefas artificialmente.", "prioridade": "Consolidar autonomia intelectual, pertencimento e preparação para responsabilidades futuras.", "instrumentos": ["Fomento Intelectual", "Mapeamento de Talentos", "Rotina mensal"], "primeira_acao": "Identificar uma oportunidade real de pesquisa, colaboração ou responsabilidade progressiva.", "risco": "Transformar bom desempenho em sobrecarga ou indicação prematura.", "continuidade": ["Acompanhar a qualidade.", "Comunicar talentos ao Venerável Mestre.", "Manter os registros."], "aprofundamento": "Capítulo 2, itens 2.5, 2.10, 2.13 e 2.14."}
+          },
+          "modificadores_gerais": [
+            {"quando": {"registros": "organizados"}, "resultados": ["3B", "3C", "3D"], "complemento_continuidade": "Mantenha a rotina documental existente e registre somente o desdobramento formativo necessário."},
+            {"quando": {"registros": "parciais"}, "resultados": ["3B", "3C", "3D"], "complemento_continuidade": "Complete os fatos formativos estritamente necessários e restabeleça o fluxo de atualização com a Secretaria."},
+            {"quando": {"registros": "memoria"}, "resultados": ["3B", "3C", "3D"], "complemento_continuidade": "Reconstrua um registro mínimo a partir de fontes verificáveis e instale uma rotina documental com a Secretaria."}
+          ]
+        },
+        "exaltacao": {
+          "perguntas": {
+            "requisitos": {"texto": "Os requisitos formais e o interstício foram confirmados?", "opcoes": {"sim": "Sim.", "nao": "Não.", "incerto": "Ainda não sei."}},
+            "percurso": {"quando": {"requisitos": "sim"}, "texto": "O percurso instrucional previsto foi concluído?", "opcoes": {"sim": "Sim.", "nao": "Não.", "incerto": "Ainda não sei."}},
+            "profundidade": {"quando": {"requisitos": "sim", "percurso": "sim"}, "texto": "O Companheiro demonstrou compreensão e maturidade?", "opcoes": {"sim": "Sim.", "duvida": "Há dúvida.", "nao": "Ainda não."}},
+            "pressao": {"texto": "Existe pressão para que a progressão aconteça agora?", "opcoes": {"sim": "Sim.", "nao": "Não."}}
+          },
+          "roteamento": [
+            {"quando": {"requisitos": ["nao", "incerto"]}, "resultado": "4A"},
+            {"quando": {"requisitos": "sim", "percurso": ["nao", "incerto"]}, "resultado": "4B"},
+            {"quando": {"requisitos": "sim", "percurso": "sim", "profundidade": "duvida"}, "resultado": "4C"},
+            {"quando": {"requisitos": "sim", "percurso": "sim", "profundidade": "nao"}, "resultado": "4D"},
+            {"quando": {"requisitos": "sim", "percurso": "sim", "profundidade": "sim"}, "resultado": "4E"}
+          ],
+          "resultados": {
+            "4A": {"titulo": "Confirmar regularidade antes de avaliar", "leitura": "Não existe base para recomendar progressão enquanto a regularidade não estiver confirmada.", "prioridade": "Verificar interstício e exigências da Potência.", "instrumentos": ["Auditoria Temporal", "Consulta ao Orador e à Secretaria"], "primeira_acao": "Conferir a norma e os registros oficiais.", "risco": "Avançar por costume, expectativa ou cálculo informal.", "continuidade": ["Confirmar os requisitos.", "Registrar a verificação.", "Somente então retomar a avaliação formativa."], "aprofundamento": "Capítulo 2, itens 2.3, 2.7, 2.11 e 2.12."},
+            "4B": {"titulo": "Concluir o percurso formativo", "leitura": "Regularidade temporal não substitui o percurso instrucional.", "prioridade": "Identificar conteúdos, experiências ou trabalhos ainda não concluídos.", "instrumentos": ["Auditoria Formativa", "Plano Diretor de Instrução"], "primeira_acao": "Comparar o previsto com o efetivamente realizado.", "risco": "Banalização do avanço.", "continuidade": ["Completar as lacunas.", "Registrar a execução.", "Reavaliar posteriormente."], "aprofundamento": "Capítulo 2, itens 2.4, 2.11 e 2.12."},
+            "4C": {"titulo": "Realizar curadoria individualizada", "leitura": "A documentação permite avaliar, mas a profundidade ainda não está demonstrada com segurança.", "prioridade": "Produzir avaliação qualitativa justa e dialógica.", "instrumentos": ["Curadoria Individualizada", "Teste de Profundidade"], "primeira_acao": "Realizar conversa estruturada com perguntas abertas.", "risco": "Confundir hesitação, estilo pessoal ou eloquência com falta de maturidade.", "continuidade": ["Registrar a conclusão técnica.", "Propor aprofundamento específico quando necessário.", "Estabelecer nova verificação."], "aprofundamento": "Capítulo 2, itens 2.4, 2.9 e 2.12."},
+            "4D": {"titulo": "Adiar a recomendação com fundamento", "leitura": "O tempo e o currículo foram cumpridos, mas o preparo efetivo ainda não foi demonstrado.", "prioridade": "Indicar lacunas concretas e condições transparentes de nova avaliação.", "instrumentos": ["Governança do Avanço", "Mapeamento de Lacunas"], "primeira_acao": "Formular devolutiva reservada, objetiva e formativa.", "risco": "Humilhar, punir ou adiar indefinidamente sem critérios.", "continuidade": ["Oferecer oportunidade de desenvolvimento.", "Definir critérios claros.", "Marcar nova avaliação."], "aprofundamento": "Capítulo 2, itens 2.4, 2.8 e 2.12."},
+            "4E": {"titulo": "Emitir parecer fundamentado", "leitura": "Há base normativa, formativa e qualitativa para a recomendação.", "prioridade": "Tornar a decisão rastreável e submetê-la às instâncias competentes.", "instrumentos": ["Parecer Executivo", "Rastreabilidade Documental"], "primeira_acao": "Sintetizar os requisitos verificados e encaminhar parecer ao Venerável Mestre.", "risco": "Tratar o parecer do Primeiro Vigilante como decisão unilateral.", "continuidade": ["Registrar a recomendação.", "Coordenar os atos seguintes.", "Preservar a dignidade do candidato."], "aprofundamento": "Capítulo 2, itens 2.4, 2.7, 2.11 e 2.12."}
+          },
+          "modificadores_gerais": [
+            {"quando": {"pressao": "sim"}, "resultados": ["4A", "4B", "4C", "4D", "4E"], "complemento_risco": "A pressão existente não altera os critérios. Registre e comunique o fundamento técnico da orientação sem personalizar o conflito."}
+          ]
+        },
+        "dificuldade": {
+          "perguntas": {
+            "natureza": {"texto": "Qual é a dificuldade predominante?", "opcoes": {"improvisacao": "A formação depende de improvisação.", "participacao": "Há baixa participação.", "registros": "Os registros estão incompletos.", "pressao": "Existe pressão por progressão.", "desalinhamento": "Há desalinhamento com outros Oficiais.", "ritual": "Existe dificuldade de condução ritual.", "indefinida": "Ainda não consigo identificar."}},
+            "exame": {"texto": "A situação já foi examinada com o Oficial relacionado?", "opcoes": {"sim": "Sim.", "parcial": "Parcialmente.", "nao": "Não."}}
+          },
+          "roteamento": [
+            {"quando": {"natureza": "indefinida"}, "resultado": "5A"},
+            {"quando": {"natureza": ["improvisacao", "participacao", "registros", "pressao", "desalinhamento", "ritual"], "exame": "nao"}, "resultado": "5A"},
+            {"quando": {"natureza": "improvisacao", "exame": ["sim", "parcial"]}, "resultado": "5B"},
+            {"quando": {"natureza": "participacao", "exame": ["sim", "parcial"]}, "resultado": "5C"},
+            {"quando": {"natureza": "registros", "exame": ["sim", "parcial"]}, "resultado": "5D"},
+            {"quando": {"natureza": "pressao", "exame": ["sim", "parcial"]}, "resultado": "5E"},
+            {"quando": {"natureza": "desalinhamento", "exame": ["sim", "parcial"]}, "resultado": "5F"},
+            {"quando": {"natureza": "ritual", "exame": ["sim", "parcial"]}, "resultado": "5G"}
+          ],
+          "resultados": {
+            "5A": {"titulo": "Transformar percepção em problema verificável", "tipo": "terminal_ciclico", "leitura": "Ainda não há compreensão compartilhada suficiente para escolher uma intervenção segura.", "prioridade": "Relacionar fatos observáveis e ouvir o Oficial competente.", "instrumentos": ["Liderança Relacional", "Rotina de alinhamento"], "primeira_acao": "Descrever um acontecimento, seu efeito formativo e quem precisa conhecê-lo.", "risco": "Converter impressão em julgamento.", "continuidade": ["Examinar a situação com o Oficial relacionado.", "Distinguir fatos de interpretações.", "Refazer o diagnóstico quando a natureza estiver clara."], "aprofundamento": "Capítulo 2, itens 2.7, 2.8 e 2.13."},
+            "5B": {"titulo": "Interromper a pedagogia do improviso", "leitura": "A formação perdeu previsibilidade e condições estáveis de execução.", "prioridade": "Recuperar planejamento, pauta e insumos.", "instrumentos": ["Plano Diretor de Instrução", "Protocolo de Excelência Instrucional"], "primeira_acao": "Proteger a próxima instrução com tema, responsável, materiais e tempo definidos.", "risco": "Corrigir uma sessão isolada sem instalar rotina.", "continuidade": ["Revisar o ciclo.", "Garantir pauta e materiais.", "Acompanhar a execução."], "aprofundamento": "Capítulo 2, itens 2.9, 2.10, 2.12 e 2.13."},
+            "5C": {"titulo": "Reabrir vínculo e participação", "leitura": "A baixa participação pode ter causas distintas e ainda precisa ser compreendida sem julgamento.", "prioridade": "Distinguir desengajamento, barreira prática e dificuldade formativa.", "instrumentos": ["Curadoria Individualizada", "Fortalecimento de Vínculos"], "primeira_acao": "Realizar escuta reservada sem cobrança.", "risco": "Presumir desinteresse.", "continuidade": ["Compreender a causa predominante.", "Ajustar apoio, integração ou método.", "Acompanhar o retorno institucional."], "aprofundamento": "Capítulo 2, itens 2.5, 2.7 e 2.10."},
+            "5D": {"titulo": "Restaurar a memória pedagógica", "leitura": "A Coluna perdeu parte da rastreabilidade necessária para acompanhar formação e progressões.", "prioridade": "Reconstruir registros mínimos e instalar fluxo com a Secretaria.", "instrumentos": ["Dossiê Formativo Individual", "Governança de Registros"], "primeira_acao": "Conferir os marcos já documentados e listar o que precisa ser reconstruído.", "risco": "Inventar informações ausentes ou registrar juízos pessoais.", "continuidade": ["Validar as fontes.", "Atualizar os registros.", "Restringir o acesso."], "aprofundamento": "Capítulo 2, itens 2.3, 2.7 e 2.11."},
+            "5E": {"titulo": "Proteger os critérios de progressão", "leitura": "A pressão existente pode deslocar a decisão do mérito verificável para expectativas externas.", "prioridade": "Reafirmar requisitos normativos e mérito efetivo.", "instrumentos": ["Protocolo de Curadoria para a Exaltação"], "primeira_acao": "Separar requisitos confirmados, pendentes e ainda não avaliados.", "risco": "Ceder à pressão ou responder de forma pessoal.", "continuidade": ["Comunicar os critérios.", "Completar a avaliação.", "Registrar o fundamento."], "aprofundamento": "Capítulo 2, itens 2.4, 2.8 e 2.12."},
+            "5F": {"titulo": "Restabelecer sincronia institucional", "leitura": "A atuação da Coluna perdeu conexão com um dos fluxos que sustentam formação e continuidade.", "prioridade": "Identificar com qual fluxo a desconexão ocorreu.", "instrumentos": ["Teia de Dependências Críticas", "Liderança Relacional"], "primeira_acao": "Realizar alinhamento específico com o Oficial relacionado, sem ampliar a pauta.", "risco": "Tentar resolver isoladamente ou transformar divergência técnica em disputa de autoridade.", "continuidade": ["Acordar a informação necessária.", "Definir a responsabilidade.", "Estabelecer a forma de retorno."], "aprofundamento": "Capítulo 2, itens 2.6, 2.7 e 2.8."},
+            "5G": {"titulo": "Recuperar prontidão ritual", "leitura": "A dificuldade ritual precisa ser localizada no estudo, ensaio, coordenação ou fluxo de informações.", "prioridade": "Identificar a origem operacional da falha.", "instrumentos": ["Estado de Prontidão", "Coordenação com o Mestre de Cerimônias"], "primeira_acao": "Rever o episódio e o fluxo esperado com os Oficiais envolvidos.", "risco": "Atribuir automaticamente a falha a uma pessoa.", "continuidade": ["Estudar o ponto necessário.", "Ensaiar quando adequado.", "Verificar novamente as condições de execução."], "aprofundamento": "Capítulo 2, itens 2.2, 2.6, 2.7 e 2.10."}
+          }
+        },
+        "prontidao": {
+          "perguntas": {
+            "ritual": {"texto": "Como está seu domínio da condução ritual da presidência?", "opcoes": {"seguro": "Seguro.", "parcial": "Parcial.", "insuficiente": "Insuficiente."}},
+            "administracao": {"texto": "Como está sua visão dos processos administrativos, obrigações e situação financeira básica?", "opcoes": {"confiavel": "Confiável.", "parcial": "Parcial.", "insuficiente": "Insuficiente."}},
+            "alinhamento": {"texto": "Como está o alinhamento com o Venerável Mestre?", "opcoes": {"regular": "Regular.", "irregular": "Irregular.", "inexistente": "Inexistente."}}
+          },
+          "roteamento": [
+            {"quando": {"ritual": "insuficiente"}, "resultado": "6A"},
+            {"quando": {"ritual": ["seguro", "parcial"], "administracao": "insuficiente"}, "resultado": "6B"},
+            {"quando": {"ritual": ["seguro", "parcial"], "administracao": ["confiavel", "parcial"], "alinhamento": ["irregular", "inexistente"]}, "resultado": "6C"},
+            {"quando": {"ritual": ["seguro", "parcial"], "administracao": ["confiavel", "parcial"], "alinhamento": "regular", "prontidao_parcial": true}, "resultado": "6D"},
+            {"quando": {"ritual": "seguro", "administracao": "confiavel", "alinhamento": "regular"}, "resultado": "6E"}
+          ],
+          "campos_derivados": [{"id": "prontidao_parcial", "valor": true, "quando_qualquer": [{"ritual": "parcial"}, {"administracao": "parcial"}]}],
+          "resultados": {
+            "6A": {"titulo": "Recuperar prontidão ritual", "leitura": "A Loja fica vulnerável se uma substituição imprevista exigir condução imediata.", "prioridade": "Dominar ritual, protocolos e responsabilidades da presidência.", "instrumentos": ["Estado de Prontidão", "Estudo contínuo do ritual de presidência"], "primeira_acao": "Identificar o primeiro ponto da condução que ainda não poderia executar com segurança.", "risco": "Esperar a ausência do Venerável Mestre para se preparar.", "continuidade": ["Estudar.", "Ensaiar.", "Validar com os Oficiais competentes."], "aprofundamento": "Capítulo 2, itens 2.1, 2.2, 2.6, 2.8 e 2.10."},
+            "6B": {"titulo": "Construir visão executiva da Loja", "leitura": "A prontidão ritual não basta sem conhecimento das decisões e obrigações em curso.", "prioridade": "Compreender processos, prazos, conformidade e situação financeira básica.", "instrumentos": ["Prontidão Presidencial", "Conselho Estratégico"], "primeira_acao": "Solicitar ao Venerável Mestre uma visão dos processos críticos atuais.", "risco": "Limitar o horizonte à Coluna do Sul.", "continuidade": ["Acompanhar as decisões.", "Conhecer as obrigações.", "Verificar os registros essenciais."], "aprofundamento": "Capítulo 2, itens 2.1, 2.6 e 2.8."},
+            "6C": {"titulo": "Restabelecer alinhamento executivo", "leitura": "Conhecimento sem coordenação pode produzir descontinuidade quando houver substituição.", "prioridade": "Instalar fluxo regular de informação e aconselhamento com o Venerável Mestre.", "instrumentos": ["Conselho Estratégico", "Interação de continuidade executiva"], "primeira_acao": "Propor alinhamento breve sobre decisões, obrigações e riscos atuais.", "risco": "Criar direção paralela ou permanecer desinformado.", "continuidade": ["Combinar a periodicidade.", "Definir matérias que exigem ciência do Primeiro Vigilante.", "Manter postura consultiva."], "aprofundamento": "Capítulo 2, itens 2.6, 2.7 e 2.8."},
+            "6D": {"titulo": "Fechar lacunas de prontidão", "leitura": "Existe base de continuidade, mas ainda há lacunas que podem aparecer sob pressão.", "prioridade": "Converter preparo parcial em capacidade verificável.", "instrumentos": ["Estado de Prontidão", "Prontidão Presidencial"], "primeira_acao": "Escolher uma lacuna ritual ou administrativa e definir como será validada.", "risco": "Confundir familiaridade com capacidade de assumir.", "continuidade": ["Estudar.", "Acompanhar os processos.", "Simular situações de substituição."], "aprofundamento": "Capítulo 2, itens 2.2, 2.6, 2.9 e 2.10."},
+            "6E": {"titulo": "Manter prontidão ativa e consultiva", "leitura": "O Primeiro Vigilante reúne condições para assegurar continuidade sem competir com a presidência.", "prioridade": "Preservar atualização, capacidade de aconselhamento e postura de substituição responsável.", "instrumentos": ["Conselho Estratégico", "Estado de Prontidão"], "primeira_acao": "Revisar com o Venerável Mestre quais processos exigem acompanhamento continuado.", "risco": "Transformar prontidão em expectativa de comando ou acomodação.", "continuidade": ["Acompanhar as decisões.", "Manter o estudo.", "Preparar futuras lideranças."], "aprofundamento": "Capítulo 2, itens 2.6, 2.7, 2.10 e 2.14."}
           }
         }
       }
