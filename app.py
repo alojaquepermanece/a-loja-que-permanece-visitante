@@ -4800,10 +4800,21 @@ def proxima_pergunta_cargo(jornada, respostas):
 
 
 def localizar_resultado_cargo(jornada, respostas):
+    respostas_processadas = dict(respostas)
+    for campo in jornada.get("campos_derivados", []):
+        condicoes_alternativas = campo.get("quando_qualquer", [])
+        if any(
+            condicoes_atendidas(condicao, respostas_processadas)
+            for condicao in condicoes_alternativas
+        ):
+            respostas_processadas[campo.get("id")] = campo.get("valor")
+
     correspondencias = [
         regra.get("resultado")
         for regra in jornada.get("roteamento", [])
-        if condicoes_atendidas(regra.get("quando", {}), respostas)
+        if condicoes_atendidas(
+            regra.get("quando", {}), respostas_processadas
+        )
     ]
     return correspondencias[0] if len(correspondencias) == 1 else None
 
@@ -4848,12 +4859,49 @@ def compor_resultado_cargo(painel, jornada, codigo, respostas):
                 *instrumentos,
                 ajuste["instrumento"],
             ]
+
+    for modificador_geral in jornada.get(
+        "modificadores_gerais", []
+    ):
+        if codigo not in modificador_geral.get("resultados", []):
+            continue
+        if not condicoes_atendidas(
+            modificador_geral.get("quando", {}), respostas
+        ):
+            continue
+
+        complemento_acao = modificador_geral.get("complemento_acao")
+        if complemento_acao:
+            acao_atual = resultado.get("primeira_acao", "")
+            resultado["primeira_acao"] = (
+                f"{acao_atual} {complemento_acao}".strip()
+            )
+
+        complemento_risco = modificador_geral.get("complemento_risco")
+        if complemento_risco:
+            risco_atual = resultado.get("risco", "")
+            resultado["risco"] = (
+                f"{risco_atual} {complemento_risco}".strip()
+            )
+
+        complemento_continuidade = modificador_geral.get(
+            "complemento_continuidade"
+        )
+        if complemento_continuidade:
+            continuidade = list(resultado.get("continuidade", []))
+            continuidade.append(complemento_continuidade)
+            resultado["continuidade"] = continuidade
     return resultado
 
 
 def abrir_cargo_leitor(identificador):
-    if identificador == "conteudo:cargo:veneravel_mestre":
-        iniciar_painel_cargo("veneravel_mestre")
+    painel_id = identificador.rsplit(":", 1)[-1]
+    try:
+        paineis_disponiveis = carregar_paineis_por_cargo()
+    except (OSError, json.JSONDecodeError, TypeError):
+        paineis_disponiveis = {}
+    if painel_id in paineis_disponiveis:
+        iniciar_painel_cargo(painel_id)
         return
     st.session_state.leitor_cargo_atual = identificador
     st.session_state.leitor_tela = "cargo_detalhe"
@@ -5432,7 +5480,9 @@ if perfil_acesso == "Leitor":
                                 st.rerun()
                         with col_painel:
                             if st.button(
-                                "PAINEL DO VENERÁVEL MESTRE",
+                                painel.get(
+                                    "titulo", "Painel do cargo"
+                                ).upper(),
                                 key="painel_cargo_voltar_painel",
                                 use_container_width=True,
                             ):
